@@ -1,0 +1,54 @@
+html, body {
+  background-color: #111;
+}
+
+#main {
+  margin-bottom: 5rem;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #fff;
+}
+
+p {
+  font-family: 'VT323', monospace;
+  font-size: 2rem;
+  color: #eee;
+}
+
+.item-dialog {
+  background-color: #320e2d;
+}
+
+.item-dialog p {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  margin: 0 0;
+}
+
+.character-dialog {
+  background-color: #3e3f18;
+}
+
+.character-dialog p {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  margin: 0 0;
+}
+
+span.link-page {
+  color: #0ee;
+  text-shadow: 3px 3px 0px #077;
+}
+
+span.character {
+  color: #fff979;
+  text-shadow: 3px 3px 0px #883;
+}
+
+span.item {
+  color: #ff83fe;
+  text-shadow: 3px 3px 0px #833;
+}
