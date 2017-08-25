@@ -3,15 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import Page from './Page';
 import Act5 from './acts/act5';
+import { connect } from 'react-redux';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { pages: [ Act5.pages._init ] };
-  }
-
   render() {
-    const pages = this.state.pages.map(p => {
+    const pages = this.props.pages.map(p => {
       return <Page page={p} />
     });
 
@@ -23,4 +19,19 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    pages: state.pages
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+};
+
+const AppContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
+
+export default AppContainer;
