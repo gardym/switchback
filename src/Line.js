@@ -12,7 +12,7 @@ class Line extends Component {
       if(typeof p === "string") {
         return (<span>{p}</span>);
       } else {
-        return (<span className={p.type}>{p.text}</span>);
+        return (<span className={p.type} onClick={() => this.props.onLinkClick(p.target)}>{p.text}</span>);
       }
     });
 
