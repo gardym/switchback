@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 import Page from './Page';
 import Act5 from './acts/act5';
 import { connect } from 'react-redux';
@@ -12,8 +11,17 @@ class App extends Component {
     });
 
     return (
-      <div>
-        {pages}
+      <div className="wrapper">
+        <div>
+          <div className="pages">
+            {pages}
+          </div>
+        </div>
+        <div className="inventory">
+          <div className="item">
+            <p>Torch</p>
+          </div>
+        </div>
       </div>
     );
   }

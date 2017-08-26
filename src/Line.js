@@ -20,8 +20,8 @@ class Line extends Component {
         <div className="line">
           <p>
             <Typing cursor={false}
-                    speed={20}
-                    startDelay={400}
+                    speed={4}
+                    startDelay={40}
                     onFinishedTyping={() => this.props.onFinishedTyping(this.props.pageId, this.props.idx)}>{parts}</Typing>
           </p>
         </div>
