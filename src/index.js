@@ -21,6 +21,28 @@ const mapScriptPageToStatePage = page => {
   }
 };
 
+const drawNextLine = (lines, idx) => {
+  return lines.map((l, i) => {
+    if(i === idx) {
+      return {
+        parts: l.parts,
+        drawn: true,
+        drawing: false,
+        hidden: false
+      }
+    } else if(i === idx + 1) {
+      return {
+        parts: l.parts,
+        drawn: false,
+        drawing: true,
+        hidden: false
+      }
+    } else {
+      return l
+    }
+  });
+}
+
 const pages = (state = [ mapScriptPageToStatePage(Act5.pages._init) ], action) => {
   if(action.type === "ADD_PAGE") {
     return [
@@ -32,25 +54,7 @@ const pages = (state = [ mapScriptPageToStatePage(Act5.pages._init) ], action) =
       if(p.id === action.pageId) {
         return {
           id: p.id,
-          lines: p.lines.map((l, idx) => {
-            if(idx === action.idx) {
-              return {
-                parts: l.parts,
-                drawn: true,
-                drawing: false,
-                hidden: false
-              }
-            } else if(idx === action.idx + 1) {
-              return {
-                parts: l.parts,
-                drawn: false,
-                drawing: true,
-                hidden: false
-              }
-            } else {
-              return l
-            }
-          })
+          lines: drawNextLine(p.lines, action.idx)
         }
       }
       return p;
