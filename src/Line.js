@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Line.css';
 import Typing from 'react-typing-animation';
+import { addPage, drawNextLine } from './actions';
 
 class Line extends Component {
   render() {
-    console.log(this.props);
-
     const parts = this.props.parts.map(p => {
       if(typeof p === "string") {
         return (<span>{p}</span>);
@@ -22,6 +21,7 @@ class Line extends Component {
           <p>
             <Typing cursor={false}
                     speed={20}
+                    startDelay={400}
                     onFinishedTyping={() => this.props.onFinishedTyping(this.props.pageId, this.props.idx)}>{parts}</Typing>
           </p>
         </div>
@@ -37,21 +37,6 @@ class Line extends Component {
     return (null);
   }
 }
-
-const addPage = id => {
-  return {
-    type: "ADD_PAGE",
-    id
-  }
-};
-
-const drawNextLine = (pageId, idx) => {
-  return {
-    type: "DRAW_NEXT_LINE",
-    pageId,
-    idx
-  }
-};
 
 const mapDispatchToProps = dispatch => {
   return {
