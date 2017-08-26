@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 class App extends Component {
   render() {
     const pages = this.props.pages.map(p => {
-      return <Page page={p} onLinkClick={this.props.onLinkClick} />
+      return <Page page={p} />
     });
 
     return (
@@ -25,24 +25,8 @@ const mapStateToProps = state => {
   }
 };
 
-const addPage = id => {
-  return {
-    type: "ADD_PAGE",
-    id
-  }
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    onLinkClick: id => {
-      dispatch(addPage(id));
-    }
-  }
-};
-
 const AppContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(App);
 
 export default AppContainer;

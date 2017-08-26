@@ -5,7 +5,7 @@ class Page extends Component {
   render() {
     const lineElements = this.props.page.lines.map(l => {
       return (
-        <Line parts={l.parts} onLinkClick={this.props.onLinkClick}/>
+        <Line parts={l.parts} />
       );
     });
 

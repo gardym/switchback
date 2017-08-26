@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Line.css';
 import Typing from 'react-typing-animation';
 
@@ -26,4 +27,24 @@ class Line extends Component {
   }
 }
 
-export default Line;
+const addPage = id => {
+  return {
+    type: "ADD_PAGE",
+    id
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLinkClick: id => {
+      dispatch(addPage(id));
+    }
+  }
+};
+
+const LineContainer = connect(
+  null,
+  mapDispatchToProps
+)(Line);
+
+export default LineContainer;
