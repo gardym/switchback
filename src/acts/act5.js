@@ -1,4 +1,5 @@
 const initPage = {
+  id: '_init',
   lines: [
     { parts: [ "The ",
                { type: "link-page", text: "highway", target: "highway" },
@@ -12,6 +13,7 @@ const initPage = {
 };
 
 const highwayPage = {
+  id: 'highway',
   lines: [
     { parts: [ "It's so cloudy you can barely see your hands in the moonlight" ] },
     { parts: [ "Where did they go?" ] },

@@ -3,9 +3,9 @@ import Line from './Line';
 
 class Page extends Component {
   render() {
-    const lineElements = this.props.page.lines.map(l => {
+    const lineElements = this.props.page.lines.map((_, idx) => {
       return (
-        <Line parts={l.parts} />
+        <Line pageId={this.props.page.id} idx={idx} />
       );
     });
 
