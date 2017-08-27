@@ -37,7 +37,7 @@ const drawNextLine = (lines, idx) => {
   });
 }
 
-const pages = (state = [ mapScriptPageToStatePage(Act5.pages._init) ], action) => {
+const pages = (state = [ mapScriptPageToStatePage(Act5.pages.something) ], action) => {
   if(action.type === "ADD_PAGE") {
     return [
       ...state,
@@ -58,8 +58,21 @@ const pages = (state = [ mapScriptPageToStatePage(Act5.pages._init) ], action) =
   return state;
 }
 
+const inventory = (state = { items: [ "Torch", "Batteries" ] }, action) => {
+  if(action.type === "PICK_UP_ITEM") {
+    return {
+      items: [
+        ...state.items,
+        Act5.items[action.id]
+      ]
+    }
+  }
+  return state;
+}
+
 const storeApp = combineReducers({
-  pages
+  pages,
+  inventory
 });
 
 export default storeApp;

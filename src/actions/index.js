@@ -12,3 +12,10 @@ export const drawNextLine = (pageId, idx) => {
     idx
   }
 };
+
+export const pickUpItem = id => {
+  return {
+    type: "PICK_UP_ITEM",
+    id
+  }
+};

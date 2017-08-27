@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Page from './Page';
-import Act5 from './acts/act5';
+import Inventory from './Inventory';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -17,14 +17,7 @@ class App extends Component {
             {pages}
           </div>
         </div>
-        <div className="inventory">
-          <div className="item">
-            <p>Torch</p>
-          </div>
-          <div className="item">
-            <p>Batteries</p>
-          </div>
-        </div>
+        <Inventory />
       </div>
     );
   }

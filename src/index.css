@@ -74,7 +74,12 @@ span.character {
   text-shadow: 3px 3px 0px #883;
 }
 
-span.item {
+span.link-item {
+  color: #ff83fe;
+  text-shadow: 3px 3px 0px #833;
+}
+
+.inventory .item p:hover {
   color: #ff83fe;
   text-shadow: 3px 3px 0px #833;
 }

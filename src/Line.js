@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Line.css';
 import Typing from 'react-typing-animation';
-import { addPage, drawNextLine } from './actions';
+import { addPage, pickUpItem, drawNextLine } from './actions';
 
 class Line extends Component {
   render() {
@@ -10,7 +10,15 @@ class Line extends Component {
       if(typeof p === "string") {
         return (<span>{p}</span>);
       } else {
-        return (<span className={p.type} onClick={() => this.props.onLinkClick(p.target)}>{p.text}</span>);
+        if(p.type === "link-page") {
+          return (<span className={p.type}
+                        onClick={() => this.props.onLinkClick(p.target)}>{p.text}</span>);
+        } else if (p.type === "link-item" && !p.hasBeenPickedUp) {
+          return( <span className={p.type}
+                        onClick={() => this.props.onItemClick(p.target)}>{p.text}</span>);
+        } else {
+          return( <span className={p.type}>{p.text}</span>);
+        }
       }
     });
 
@@ -42,6 +50,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onLinkClick: id => {
       dispatch(addPage(id));
+    },
+    onItemClick: id => {
+      dispatch(pickUpItem(id));
     },
     onFinishedTyping: (pageId, idx) => {
       dispatch(drawNextLine(pageId, idx));

@@ -27,13 +27,45 @@ const highwayPage = {
   ]
 };
 
+const bankPage = {
+  id: 'bank',
+  lines: [
+    { parts: [ "You take the bank more slowly, carefully, this time." ] },
+    { parts: [ "Slow enough that your foot just catches on ",
+               { type: "link-page", text: "something", target: "something" },
+               " without sending you tumbling." ] },
+    { parts: [ "There's nothing else down here but bushes and woods as far as you can see. Which isn't far in this light." ] },
+    { parts: [ "Might as well try the ",
+               { type: "link-page", text: "highway", target: "highway" },
+               " again." ] }
+  ]
+};
+
+const somethingPage = {
+  id: 'something',
+  lines: [
+    { parts: [ "You feel around at your feet for something hard." ] },
+    { parts: [ "It's a ",
+             { type: "link-item", text: "broken car headlamp", target: "carlamp" },
+               ". Guess you're not the first person to come unstuck on this stretch of ",
+             { type: "link-page", text: "highway", target: "highway" }, "." ] }
+  ]
+};
+
 const pages = {
   _init: initPage,
-  highway: highwayPage
+  highway: highwayPage,
+  bank: bankPage,
+  something: somethingPage
+};
+
+const items = {
+  carlamp: "Car headlamp"
 };
 
 const Act5 = {
-  pages: pages
+  pages: pages,
+  items: items
 };
 
 export default Act5;
