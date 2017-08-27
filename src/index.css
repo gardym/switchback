@@ -13,11 +13,23 @@ html, body {
 .pages {
   flex: 1;
   overflow: auto;
-  height: 85vh;
+  height: 90vh;
 }
 
 .inventory {
-  height: 2rem;
+  border-top: 1px solid #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.inventory .item {
+  width: 25vh;
+}
+
+.inventory p {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 hr {

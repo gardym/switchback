@@ -21,6 +21,9 @@ class App extends Component {
           <div className="item">
             <p>Torch</p>
           </div>
+          <div className="item">
+            <p>Batteries</p>
+          </div>
         </div>
       </div>
     );
