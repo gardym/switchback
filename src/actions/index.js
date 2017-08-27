@@ -19,3 +19,10 @@ export const pickUpItem = id => {
     id
   }
 };
+
+export const useInventoryItem = id => {
+  return {
+    type: "USE_INVENTORY_ITEM",
+    id
+  }
+};

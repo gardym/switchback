@@ -60,7 +60,7 @@ const pages = {
 };
 
 const items = {
-  carlamp: "Car headlamp"
+  carlamp: { id: "carlamp", text:"Car headlamp" }
 };
 
 const Act5 = {

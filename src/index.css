@@ -84,3 +84,10 @@ span.link-item {
   text-shadow: 3px 3px 0px #833;
 }
 
+.inventory .highlighted {
+  background-color: #320e2d;
+}
+
+.inventory .highlighted p {
+  color: #ff83fe;
+}

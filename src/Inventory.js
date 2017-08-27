@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import InventoryItem from './InventoryItem';
+import { useInventoryItem } from './actions';
 
 class Inventory extends Component {
   render() {
     const itemElements = this.props.inventory.items.map(i => {
       return (
-        <div className="item"><p>{i}</p></div>
+        <InventoryItem text={i.text}
+                       onInventoryItemClicked={this.props.onInventoryItemClicked}
+                       id={i.id}
+                       highlighted={i.highlighted} />
       );
     });
     return (
@@ -22,8 +27,17 @@ const mapStateToProps = state => {
   }
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    onInventoryItemClicked: (id) => {
+      dispatch(useInventoryItem(id));
+    }
+  }
+};
+
 const InventoryContainer = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Inventory);
 
 export default InventoryContainer;
