@@ -13,7 +13,7 @@ html, body {
 .pages {
   flex: 1;
   overflow: auto;
-  height: 90vh;
+  height: 80vh;
 }
 
 .inventory {
@@ -24,11 +24,16 @@ html, body {
 }
 
 .inventory .item {
-  width: 25vh;
+  width: 25vw;
 }
 
 .inventory p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.interaction p {
+  height: 2rem;
   text-align: center;
 }
 

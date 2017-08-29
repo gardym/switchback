@@ -26,3 +26,17 @@ export const useInventoryItem = id => {
     id
   }
 };
+
+export const hoverInventoryItem = id => {
+  return {
+    type: "HOVER_INVENTORY_ITEM",
+    id
+  }
+};
+
+export const unhoverInventoryItem = id => {
+  return {
+    type: "UNHOVER_INVENTORY_ITEM",
+    id
+  }
+}

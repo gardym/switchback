@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import ReactHoverObserver from 'react-hover-observer';
 
 class InventoryItem extends Component {
   render() {
@@ -7,8 +8,11 @@ class InventoryItem extends Component {
       highlighted: this.props.highlighted
     });
     return (
-      <div className={itemClass}
-           onClick={() => this.props.onInventoryItemClicked(this.props.id)}><p>{this.props.text}</p></div>
+      <ReactHoverObserver
+          onHoverChanged={({isHovering}) => this.props.onHoverChanged(this.props.id, isHovering)}>
+        <div className={itemClass}
+             onClick={() => this.props.onInventoryItemClicked(this.props.id)}><p>{this.props.text}</p></div>
+      </ReactHoverObserver>
     );
   }
 }

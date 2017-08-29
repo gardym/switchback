@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import InventoryItem from './InventoryItem';
-import { useInventoryItem } from './actions';
+import { useInventoryItem, hoverInventoryItem, unhoverInventoryItem } from './actions';
 
 class Inventory extends Component {
   render() {
@@ -9,6 +9,7 @@ class Inventory extends Component {
       return (
         <InventoryItem text={i.text}
                        onInventoryItemClicked={this.props.onInventoryItemClicked}
+                       onHoverChanged={this.props.onHoverChanged}
                        id={i.id}
                        highlighted={i.highlighted} />
       );
@@ -31,6 +32,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onInventoryItemClicked: (id) => {
       dispatch(useInventoryItem(id));
+    },
+    onHoverChanged: (id, isHovering) => {
+      dispatch(isHovering ? hoverInventoryItem(id) : unhoverInventoryItem(id));
     }
   }
 };

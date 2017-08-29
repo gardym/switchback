@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import Page from './Page';
 import Inventory from './Inventory';
+import Interaction from './Interaction';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
             {pages}
           </div>
         </div>
+        <Interaction />
         <Inventory />
       </div>
     );
