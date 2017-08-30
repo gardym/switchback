@@ -118,12 +118,18 @@ const interaction = (state = interactionState, action) => {
       return Object.assign({}, state, { secondItem: null });
     }
   } else if(action.type === "USE_INVENTORY_ITEM") {
-    return Object.assign({}, state, {
-      firstItem: {
-        id: action.id,
-        selected: true
-      }
-    });
+    if(!state.firstItem.selected) {
+      return Object.assign({}, state, {
+        firstItem: {
+          id: action.id,
+          selected: true
+        }
+      });
+    } else {
+      return Object.assign({}, state, {
+        firstItem: null
+      });
+    }
   }
   return Object.assign({}, state);
 };
