@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 import Act5 from '../acts/act5';
+import interaction from './interaction';
+import inventory from './inventory';
 
 const mapScriptPageToStatePage = page => {
   return {
@@ -57,82 +59,6 @@ const pages = (state = [ mapScriptPageToStatePage(Act5.pages.something) ], actio
 
   return state;
 }
-
-const initialInventoryState = {
- items: [
-   { highlighted: false, id: "batteries", text: "Batteries" }
- ]
-};
-
-const mapItemToStateItem = item => {
-  return Object.assign({}, item, { highlighted: false });
-};
-
-const inventory = (state = initialInventoryState, action) => {
-  if(action.type === "PICK_UP_ITEM") {
-    return {
-      items: [
-        ...state.items,
-        mapItemToStateItem(Act5.items[action.id])
-      ]
-    }
-  } else if(action.type === "USE_INVENTORY_ITEM") {
-    return {
-      items: state.items.map(i => {
-        if(i.id === action.id) {
-          return Object.assign({}, i, { highlighted: !i.highlighted });
-        }
-        return i;
-      })
-    }
-  }
-  return state;
-}
-
-const interactionState = {
-  firstItem: null,
-  secondItem: null
-};
-
-const interaction = (state = interactionState, action) => {
-  if(action.type === "HOVER_INVENTORY_ITEM") {
-    if(!state.firstItem || !state.firstItem.selected) {
-      return Object.assign({}, state, {
-        firstItem: {
-          id: action.id,
-          selected: false
-        }
-      });
-    } else if(!state.secondItem) {
-      return Object.assign({}, state, {
-        secondItem: {
-          id: action.id,
-          selected: false
-        }
-      });
-    }
-  } else if(action.type === "UNHOVER_INVENTORY_ITEM") {
-    if(state.firstItem && !state.firstItem.selected) {
-      return Object.assign({}, state, { firstItem: null });
-    } else {
-      return Object.assign({}, state, { secondItem: null });
-    }
-  } else if(action.type === "USE_INVENTORY_ITEM") {
-    if(!state.firstItem.selected) {
-      return Object.assign({}, state, {
-        firstItem: {
-          id: action.id,
-          selected: true
-        }
-      });
-    } else {
-      return Object.assign({}, state, {
-        firstItem: null
-      });
-    }
-  }
-  return Object.assign({}, state);
-};
 
 const storeApp = combineReducers({
   pages,
