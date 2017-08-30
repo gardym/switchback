@@ -48,7 +48,10 @@ const somethingPage = {
     { parts: [ "It's a ",
              { type: "link-item", text: "broken car headlamp", target: "carlamp" },
                ". Guess you're not the first person to come unstuck on this stretch of ",
-             { type: "link-page", text: "highway", target: "highway" }, "." ] }
+             { type: "link-page", text: "highway", target: "highway" }, "." ] },
+    { parts: [ "You could search the ",
+             { type: "link-hotspot", text: "ground" },
+             "." ] }
   ]
 };
 
@@ -60,7 +63,7 @@ const pages = {
 };
 
 const items = {
-  carlamp: { id: "carlamp", text:"Car headlamp" }
+  carlamp: { id: "carlamp", text:"Broken car headlamp" }
 };
 
 const Act5 = {
