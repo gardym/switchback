@@ -2,7 +2,7 @@ import Act5 from '../acts/act5';
 
 const initialInventoryState = {
  items: [
-   { highlighted: false, id: "batteries", text: "Batteries" }
+   { highlighted: false, id: "batteries", text: "Batteries", useWith: "carlamp" }
  ]
 };
 

@@ -63,7 +63,8 @@ const pages = {
 };
 
 const items = {
-  carlamp: { id: "carlamp", text:"Broken car headlamp" }
+  poweredCarLamp: { id: "poweredCarLamp", text: "Battery-powered car headlamp" },
+  carlamp: { id: "carlamp", text: "Broken car headlamp", useWith: "batteries", produces: "poweredCarLamp" }
 };
 
 const Act5 = {
