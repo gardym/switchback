@@ -1,5 +1,9 @@
 import Act5 from '../acts/act5';
 
+const mapItemToStateItem = item => {
+  return Object.assign({}, item, { highlighted: false });
+};
+
 const initialInteractionState = {
   firstItem: null,
   secondItem: null
@@ -43,25 +47,23 @@ const interaction = (fullState, action) => {
         }
       });
     } else {
-      if(Act5.items[state.firstItem.id].useWith === action.id ||
-         Act5.items[action.id].useWith === state.firstItem.id) {
-        const items = fullState.inventory.items.map(i => {
+      var items = fullState.inventory.items;
+      if(Act5.items[state.firstItem.id].useWith === action.id) {
+        items = fullState.inventory.items.filter(i => {
           return i.id !== state.firstItem.id && i.id !== action.id
         });
-        console.log(fullState);
-        console.log('Combining items');
+        items.push(mapItemToStateItem(Act5.items[Act5.items[state.firstItem.id].produces]));
       }
       nextState = Object.assign({}, state, {
-        firstItem: null
+        firstItem: null,
+        secondItem: null
       });
+      return Object.assign({}, fullState, { interaction: nextState, inventory: { items: items } });
     }
   }
   return Object.assign({}, fullState, { interaction: nextState });
 };
 
-const mapItemToStateItem = item => {
-  return Object.assign({}, item, { highlighted: false });
-};
 
 const initialInventoryState = {
  items: [
