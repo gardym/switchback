@@ -24,7 +24,7 @@ class Inventory extends Component {
 
 const mapStateToProps = state => {
   return {
-    inventory: state.inventory
+    inventory: state.inventory.inventory
   }
 };
 

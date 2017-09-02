@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import Act5 from '../acts/act5';
-import interaction from './interaction';
 import inventory from './inventory';
 
 const mapScriptPageToStatePage = page => {
@@ -62,8 +61,7 @@ const pages = (state = [ mapScriptPageToStatePage(Act5.pages.something) ], actio
 
 const storeApp = combineReducers({
   pages,
-  inventory,
-  interaction
+  inventory
 });
 
 export default storeApp;

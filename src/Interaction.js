@@ -27,8 +27,8 @@ class Interaction extends Component {
 
 const mapStateToProps = state => {
   return {
-    firstItem: state.interaction.firstItem,
-    secondItem: state.interaction.secondItem
+    firstItem: state.inventory.interaction.firstItem,
+    secondItem: state.inventory.interaction.secondItem
   }
 };
 
