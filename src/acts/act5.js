@@ -64,7 +64,8 @@ const pages = {
 
 const items = {
   poweredCarLamp: { id: "poweredCarLamp", text: "Battery-powered car headlamp" },
-  carlamp: { id: "carlamp", text: "Broken car headlamp", useWith: "batteries", produces: "poweredCarLamp" }
+  carlamp: { id: "carlamp", text: "Broken car headlamp", useWith: "batteries", produces: "poweredCarLamp" },
+  batteries: { id: "batteries", text: "Batteries", useWith: "carlamp", produces: "poweredCarLamp" }
 };
 
 const Act5 = {

@@ -7,9 +7,10 @@ const initialInteractionState = {
 
 const interaction = (fullState, action) => {
   const state = fullState.interaction;
+  var nextState = fullState.interaction;
   if(action.type === "HOVER_INVENTORY_ITEM") {
     if(!state.firstItem || !state.firstItem.selected) {
-      return Object.assign({}, state, {
+      nextState = Object.assign({}, state, {
         firstItem: {
           id: action.id,
           selected: false
@@ -17,9 +18,9 @@ const interaction = (fullState, action) => {
       });
     } else if(!state.secondItem) {
       if(action.id === state.firstItem.id) {
-        return state;
+        nextState = state;
       } else {
-        return Object.assign({}, state, {
+        nextState = Object.assign({}, state, {
           secondItem: {
             id: action.id,
             selected: false
@@ -29,57 +30,70 @@ const interaction = (fullState, action) => {
     }
   } else if(action.type === "UNHOVER_INVENTORY_ITEM") {
     if(state.firstItem && !state.firstItem.selected) {
-      return Object.assign({}, state, { firstItem: null });
+      nextState = Object.assign({}, state, { firstItem: null });
     } else {
-      return Object.assign({}, state, { secondItem: null });
+      nextState = Object.assign({}, state, { secondItem: null });
     }
   } else if(action.type === "USE_INVENTORY_ITEM") {
     if(!state.firstItem.selected) {
-      return Object.assign({}, state, {
+      nextState = Object.assign({}, state, {
         firstItem: {
           id: action.id,
           selected: true
         }
       });
     } else {
-      return Object.assign({}, state, {
+      if(Act5.items[state.firstItem.id].useWith === action.id ||
+         Act5.items[action.id].useWith === state.firstItem.id) {
+        const items = fullState.inventory.items.map(i => {
+          return i.id !== state.firstItem.id && i.id !== action.id
+        });
+        console.log(fullState);
+        console.log('Combining items');
+      }
+      nextState = Object.assign({}, state, {
         firstItem: null
       });
     }
   }
-  return Object.assign({}, state);
-};
-
-const initialInventoryState = {
- items: [
-   { highlighted: false, id: "batteries", text: "Batteries", useWith: "carlamp" }
- ]
+  return Object.assign({}, fullState, { interaction: nextState });
 };
 
 const mapItemToStateItem = item => {
   return Object.assign({}, item, { highlighted: false });
 };
 
+const initialInventoryState = {
+ items: [
+   mapItemToStateItem(Act5.items['batteries'])
+ ]
+};
+
 const inventory = (fullState, action) => {
-  const state = fullState.inventory;
   if(action.type === "PICK_UP_ITEM") {
     return {
-      items: [
-        ...state.items,
-        mapItemToStateItem(Act5.items[action.id])
-      ]
+      inventory: {
+        items: [
+          ...fullState.inventory.items,
+          mapItemToStateItem(Act5.items[action.id])
+        ]
+      },
+      interaction: fullState.interaction
     }
   } else if(action.type === "USE_INVENTORY_ITEM") {
     return {
-      items: state.items.map(i => {
-        if(i.id === action.id) {
-          return Object.assign({}, i, { highlighted: !i.highlighted });
-        }
-        return i;
-      })
+      inventory: {
+        items: fullState.inventory.items.map(i => {
+          if(i.id === action.id) {
+            return Object.assign({}, i, { highlighted: !i.highlighted });
+          }
+          return i;
+        })
+      },
+      interaction: fullState.interaction
     }
   }
-  return state;
+  return fullState;
 }
 
 const initialCombinedInventoryState = {
@@ -88,10 +102,9 @@ const initialCombinedInventoryState = {
 };
 
 const combinedInventory = (state = initialCombinedInventoryState, action) => {
-  return {
-    interaction: interaction(state, action),
-    inventory: inventory(state, action)
-  };
+  var nextState = Object.assign({}, interaction(state, action));
+  nextState = Object.assign({}, inventory(nextState, action));
+  return nextState;
 }
 
 export default combinedInventory;
