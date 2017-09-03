@@ -77,6 +77,12 @@ const interaction = (fullState, action) => {
         secondItem: null
       });
     }
+  } else if(action.type === "USE_HOTSPOT") {
+    if(state.firstItem && state.firstItem.selected) {
+      if(Act5.items[state.firstItem.id].useWith === action.id) {
+        console.log(`Can use these together`);
+      }
+    }
   }
   return Object.assign({}, fullState, { interaction: nextState });
 };

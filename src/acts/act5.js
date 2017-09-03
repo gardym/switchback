@@ -50,7 +50,7 @@ const somethingPage = {
                ". Guess you're not the first person to come unstuck on this stretch of ",
              { type: "link-page", text: "highway", target: "highway" }, "." ] },
     { parts: [ "You could search the ",
-             { type: "link-hotspot", text: "ground", id: "ground" },
+             { type: "link-hotspot", text: "ground", id: "ground", target: "groundPage" },
              "." ] }
   ]
 };

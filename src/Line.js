@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Line.css';
 import Typing from 'react-typing-animation';
-import { addPage, pickUpItem, drawNextLine, hoverHotspot, unhoverHotspot } from './actions';
+import { addPage, pickUpItem, drawNextLine, hoverHotspot, unhoverHotspot, hotspotClick } from './actions';
 import ReactHoverObserver from 'react-hover-observer';
 
 class Line extends Component {
@@ -21,7 +21,8 @@ class Line extends Component {
           return (
             <ReactHoverObserver className="hotspot-hover"
                 onHoverChanged={({isHovering}) => this.props.onHotspotHoverChanged(p.id, isHovering)}>
-              <span className={p.type}>{p.text}</span>
+              <span className={p.type}
+                  onClick={() => this.props.onHotspotClick(p.id)}>{p.text}</span>
             </ReactHoverObserver>
           );
         } else {
@@ -67,6 +68,9 @@ const mapDispatchToProps = dispatch => {
     },
     onHotspotHoverChanged: (id, isHovering) => {
       dispatch(isHovering ? hoverHotspot(id) : unhoverHotspot(id));
+    },
+    onHotspotClick: (id) => {
+      dispatch(hotspotClick(id));
     }
   }
 };

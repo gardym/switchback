@@ -54,3 +54,10 @@ export const unhoverHotspot = id => {
     id
   }
 }
+
+export const hotspotClick = id => {
+  return {
+    type: "USE_HOTSPOT",
+    id
+  }
+}
