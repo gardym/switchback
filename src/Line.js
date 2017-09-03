@@ -6,6 +6,16 @@ import { addPage, pickUpItem, drawNextLine, hoverHotspot, unhoverHotspot, hotspo
 import ReactHoverObserver from 'react-hover-observer';
 
 class Line extends Component {
+  componentDidUpdate() {
+    if(this.lineRef) {
+      this.lineRef.scrollIntoView({
+        block: 'end',
+        inline: 'end',
+        behavior: 'smooth'
+      });
+    }
+  }
+
   render() {
     const parts = this.props.parts.map(p => {
       if(typeof p === "string") {
@@ -34,7 +44,7 @@ class Line extends Component {
     if(this.props.drawing) {
 
       return (
-        <div className="line">
+        <div className="line" ref={(el) => { this.lineRef = el; }}>
           <p>
             <Typing cursor={false}
                     speed={4}
