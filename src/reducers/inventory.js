@@ -60,6 +60,21 @@ const interaction = (fullState, action) => {
       });
       return Object.assign({}, fullState, { interaction: nextState, inventory: { items: items } });
     }
+  } else if(action.type === "HOVER_HOTSPOT") {
+    if(state.firstItem && state.firstItem.selected) {
+      nextState = Object.assign({}, state, {
+        secondItem: {
+          id: action.id,
+          selected: false
+        }
+      });
+    }
+  } else if(action.type === "UNHOVER_HOTSPOT") {
+    if(state.firstItem && state.firstItem.selected) {
+      nextState = Object.assign({}, state, {
+        secondItem: null
+      });
+    }
   }
   return Object.assign({}, fullState, { interaction: nextState });
 };

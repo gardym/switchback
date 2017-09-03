@@ -76,9 +76,13 @@ span.link-page {
   text-shadow: 3px 3px 0px #077;
 }
 
-span.character {
+span.link-hotspot {
   color: #fff979;
   text-shadow: 3px 3px 0px #883;
+}
+
+.hotspot-hover {
+  display: inline;
 }
 
 span.link-item {

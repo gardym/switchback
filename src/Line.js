@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Line.css';
 import Typing from 'react-typing-animation';
-import { addPage, pickUpItem, drawNextLine } from './actions';
+import { addPage, pickUpItem, drawNextLine, hoverHotspot, unhoverHotspot } from './actions';
+import ReactHoverObserver from 'react-hover-observer';
 
 class Line extends Component {
   render() {
@@ -16,6 +17,13 @@ class Line extends Component {
         } else if (p.type === "link-item" && !p.hasBeenPickedUp) {
           return( <span className={p.type}
                         onClick={() => this.props.onItemClick(p.target)}>{p.text}</span>);
+        } else if (p.type === "link-hotspot") {
+          return (
+            <ReactHoverObserver className="hotspot-hover"
+                onHoverChanged={({isHovering}) => this.props.onHotspotHoverChanged(p.id, isHovering)}>
+              <span className={p.type}>{p.text}</span>
+            </ReactHoverObserver>
+          );
         } else {
           return( <span className={p.type}>{p.text}</span>);
         }
@@ -56,6 +64,9 @@ const mapDispatchToProps = dispatch => {
     },
     onFinishedTyping: (pageId, idx) => {
       dispatch(drawNextLine(pageId, idx));
+    },
+    onHotspotHoverChanged: (id, isHovering) => {
+      dispatch(isHovering ? hoverHotspot(id) : unhoverHotspot(id));
     }
   }
 };

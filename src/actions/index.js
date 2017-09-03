@@ -40,3 +40,17 @@ export const unhoverInventoryItem = id => {
     id
   }
 }
+
+export const hoverHotspot = id => {
+  return {
+    type: "HOVER_HOTSPOT",
+    id
+  }
+}
+
+export const unhoverHotspot = id => {
+  return {
+    type: "UNHOVER_HOTSPOT",
+    id
+  }
+}

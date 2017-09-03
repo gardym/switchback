@@ -50,7 +50,7 @@ const somethingPage = {
                ". Guess you're not the first person to come unstuck on this stretch of ",
              { type: "link-page", text: "highway", target: "highway" }, "." ] },
     { parts: [ "You could search the ",
-             { type: "link-hotspot", text: "ground" },
+             { type: "link-hotspot", text: "ground", id: "ground" },
              "." ] }
   ]
 };
@@ -63,14 +63,19 @@ const pages = {
 };
 
 const items = {
-  poweredCarLamp: { id: "poweredCarLamp", text: "Battery-powered car headlamp" },
+  poweredCarLamp: { id: "poweredCarLamp", text: "Battery-powered car headlamp", useWith: "ground" },
   carlamp: { id: "carlamp", text: "Broken car headlamp", useWith: "batteries", produces: "poweredCarLamp" },
   batteries: { id: "batteries", text: "Batteries", useWith: "carlamp", produces: "poweredCarLamp" }
 };
 
+const hotspots = {
+  ground: { id: "ground", text: "ground", useWith: "poweredCarLamp" }
+};
+
 const Act5 = {
   pages: pages,
-  items: items
+  items: items,
+  hotspots: hotspots
 };
 
 export default Act5;
