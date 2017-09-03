@@ -27,7 +27,8 @@ const interaction = (fullState, action) => {
         nextState = Object.assign({}, state, {
           secondItem: {
             id: action.id,
-            selected: false
+            selected: false,
+            type: 'item'
           }
         });
       }
@@ -65,7 +66,8 @@ const interaction = (fullState, action) => {
       nextState = Object.assign({}, state, {
         secondItem: {
           id: action.id,
-          selected: false
+          selected: false,
+          type: 'hotspot'
         }
       });
     }

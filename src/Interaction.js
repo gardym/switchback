@@ -9,7 +9,8 @@ class Interaction extends Component {
 
     var secondItemElement = null;
     if(this.props.secondItem) {
-      secondItemElement = (<span className="link-item">{this.props.secondItem.id}</span>);
+      const className = `link-${this.props.secondItem.type}`;
+      secondItemElement = (<span className={className}>{this.props.secondItem.id}</span>);
     }
 
     return (
