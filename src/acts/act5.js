@@ -55,6 +55,20 @@ const somethingPage = {
   ]
 };
 
+const groundPage = {
+  id: 'ground',
+  lines: [
+    { parts: [ "You find what looks like a ",
+               { type: "link-item", text: "business card", target: "businessCard" },
+               " amongst the dirt." ] },
+    { parts: [ "It's for a cop." ] },
+    { parts: [ "Ron Higglesworth" ] },
+    { parts: [ "What could it be doing ",
+               { type: "link-page", text: "here", target: "something" },
+               "." ] }
+  ]
+};
+
 const pages = {
   _init: initPage,
   highway: highwayPage,

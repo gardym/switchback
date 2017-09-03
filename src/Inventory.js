@@ -10,8 +10,7 @@ class Inventory extends Component {
         <InventoryItem text={i.text}
                        onInventoryItemClicked={this.props.onInventoryItemClicked}
                        onHoverChanged={this.props.onHoverChanged}
-                       id={i.id}
-                       highlighted={i.highlighted} />
+                       id={i.id} />
       );
     });
     return (

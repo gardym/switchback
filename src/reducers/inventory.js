@@ -1,7 +1,7 @@
 import Act5 from '../acts/act5';
 
 const mapItemToStateItem = item => {
-  return Object.assign({}, item, { highlighted: false });
+  return Object.assign({}, item, { });
 };
 
 const initialInteractionState = {
@@ -81,6 +81,11 @@ const interaction = (fullState, action) => {
     if(state.firstItem && state.firstItem.selected) {
       if(Act5.items[state.firstItem.id].useWith === action.id) {
         console.log(`Can use these together`);
+      } else {
+        nextState = Object.assign({}, state, {
+          firstItem: null,
+          secondItem: null
+        });
       }
     }
   }
@@ -102,18 +107,6 @@ const inventory = (fullState, action) => {
           ...fullState.inventory.items,
           mapItemToStateItem(Act5.items[action.id])
         ]
-      },
-      interaction: fullState.interaction
-    }
-  } else if(action.type === "USE_INVENTORY_ITEM") {
-    return {
-      inventory: {
-        items: fullState.inventory.items.map(i => {
-          if(i.id === action.id) {
-            return Object.assign({}, i, { highlighted: !i.highlighted });
-          }
-          return i;
-        })
       },
       interaction: fullState.interaction
     }
