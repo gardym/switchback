@@ -62,10 +62,10 @@ const groundPage = {
                { type: "link-item", text: "business card", target: "businessCard" },
                " amongst the dirt." ] },
     { parts: [ "It's for a cop." ] },
-    { parts: [ "Ron Higglesworth" ] },
-    { parts: [ "What could it be doing ",
+    { parts: [ "\"Ron Higglesworth.\"" ] },
+    { parts: [ "What's it doing ",
                { type: "link-page", text: "here", target: "something" },
-               "." ] }
+               "?" ] }
   ]
 };
 

@@ -14,7 +14,7 @@ class Line extends Component {
         if(p.type === "link-page") {
           return (<span className={p.type}
                         onClick={() => this.props.onLinkClick(p.target)}>{p.text}</span>);
-        } else if (p.type === "link-item" && !p.hasBeenPickedUp) {
+        } else if (p.type === "link-item") {
           return( <span className={p.type}
                         onClick={() => this.props.onItemClick(p.target)}>{p.text}</span>);
         } else if (p.type === "link-hotspot") {
@@ -75,13 +75,8 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
-  const page = state.pages.filter(p => p.id === ownProps.pageId)[0];
-  return page.lines[ownProps.idx];
-};
-
 const LineContainer = connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Line);
 

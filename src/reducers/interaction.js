@@ -9,7 +9,8 @@ const interaction = (fullState, action) => {
       nextState = Object.assign({}, state, {
         firstItem: {
           id: action.id,
-          selected: false
+          selected: false,
+          text: Act5.items[action.id].text
         }
       });
     } else if(!state.secondItem) {
@@ -20,6 +21,7 @@ const interaction = (fullState, action) => {
           secondItem: {
             id: action.id,
             selected: false,
+            text: Act5.items[action.id].text,
             type: 'item'
           }
         });
@@ -36,7 +38,8 @@ const interaction = (fullState, action) => {
       nextState = Object.assign({}, state, {
         firstItem: {
           id: action.id,
-          selected: true
+          selected: true,
+          text: Act5.items[action.id].text
         }
       });
     } else {
@@ -59,7 +62,8 @@ const interaction = (fullState, action) => {
         secondItem: {
           id: action.id,
           selected: false,
-          type: 'hotspot'
+          type: 'hotspot',
+          text: Act5.hotspots[action.id].text
         }
       });
     }
@@ -71,8 +75,9 @@ const interaction = (fullState, action) => {
     }
   } else if(action.type === "USE_HOTSPOT") {
     if(state.firstItem && state.firstItem.selected) {
+      var pages = [ ...fullState.pages ];
       if(Act5.items[state.firstItem.id].useWith === action.id) {
-        console.log(`Can use these together`);
+        pages.push(mapScriptPageToStatePage(Act5.pages[Act5.hotspots[action.id].target]));
       }
       nextState = Object.assign({}, state, {
         firstItem: null,
@@ -80,10 +85,7 @@ const interaction = (fullState, action) => {
       });
       return Object.assign({}, fullState, {
         interaction: nextState,
-        pages: [
-          ...fullState.pages,
-          mapScriptPageToStatePage(Act5.pages[Act5.hotspots[action.id].target])
-        ]
+        pages: pages
       });
     }
   }
