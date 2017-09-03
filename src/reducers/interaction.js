@@ -1,4 +1,5 @@
 import Act5 from '../acts/act5';
+import { mapScriptPageToStatePage } from './pages';
 
 const interaction = (fullState, action) => {
   const state = fullState.interaction;
@@ -72,12 +73,18 @@ const interaction = (fullState, action) => {
     if(state.firstItem && state.firstItem.selected) {
       if(Act5.items[state.firstItem.id].useWith === action.id) {
         console.log(`Can use these together`);
-      } else {
-        nextState = Object.assign({}, state, {
-          firstItem: null,
-          secondItem: null
-        });
       }
+      nextState = Object.assign({}, state, {
+        firstItem: null,
+        secondItem: null
+      });
+      return Object.assign({}, fullState, {
+        interaction: nextState,
+        pages: [
+          ...fullState.pages,
+          mapScriptPageToStatePage(Act5.pages[Act5.hotspots[action.id].target])
+        ]
+      });
     }
   }
   return Object.assign({}, fullState, { interaction: nextState });

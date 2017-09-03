@@ -73,17 +73,19 @@ const pages = {
   _init: initPage,
   highway: highwayPage,
   bank: bankPage,
-  something: somethingPage
+  something: somethingPage,
+  ground: groundPage
 };
 
 const items = {
   poweredCarLamp: { id: "poweredCarLamp", text: "Battery-powered car headlamp", useWith: "ground" },
   carlamp: { id: "carlamp", text: "Broken car headlamp", useWith: "batteries", produces: "poweredCarLamp" },
-  batteries: { id: "batteries", text: "Batteries", useWith: "carlamp", produces: "poweredCarLamp" }
+  batteries: { id: "batteries", text: "Batteries", useWith: "carlamp", produces: "poweredCarLamp" },
+  businessCard: { id: "businessCard", text: "Business Card" }
 };
 
 const hotspots = {
-  ground: { id: "ground", text: "ground", useWith: "poweredCarLamp" }
+  ground: { id: "ground", text: "ground", useWith: "poweredCarLamp", target: "ground" }
 };
 
 const Act5 = {

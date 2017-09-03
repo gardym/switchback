@@ -15,8 +15,8 @@ html, body {
   flex: 1;
   overflow: auto;
   height: 80vh;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .inventory {
