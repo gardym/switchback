@@ -4,12 +4,11 @@ export const mapScriptPageToStatePage = page => {
   return {
     id: page.id,
     lines: page.lines.map((l, idx) => {
-      return {
+      return Object.assign({}, l, {
         hidden: idx !== 0,
         drawing: idx === 0,
-        drawn: false,
-        parts: l.parts
-      }
+        drawn: false
+      });
     })
   }
 };
@@ -17,19 +16,19 @@ export const mapScriptPageToStatePage = page => {
 const drawNextLine = (lines, idx) => {
   return lines.map((l, i) => {
     if(i === idx) {
-      return {
+      return Object.assign({}, l, {
         parts: l.parts,
         drawn: true,
         drawing: false,
         hidden: false
-      }
+      });
     } else if(i === idx + 1) {
-      return {
+      return Object.assign({}, l, {
         parts: l.parts,
         drawn: false,
         drawing: true,
         hidden: false
-      }
+      });
     } else {
       return l
     }

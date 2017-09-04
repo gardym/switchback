@@ -32,7 +32,7 @@ class Line extends Component {
             <ReactHoverObserver className="hotspot-hover" key={idx}
                 onHoverChanged={({isHovering}) => this.props.onHotspotHoverChanged(p.id, isHovering)}>
               <span className={p.type}
-                  onClick={() => this.props.onHotspotClick(p.id)}>{p.text}</span>
+                  onClick={() => this.props.onHotspotClick(p.id, this.props.pageIdx, this.props.idx, idx)}>{p.text}</span>
             </ReactHoverObserver>
           );
         } else {
@@ -41,8 +41,16 @@ class Line extends Component {
       }
     });
 
-    if(this.props.drawing) {
+    var tip = "";
+    if(this.props.showTip) {
+      tip = (
+        <Typing cursor={false} speed={4}>
+          <p className="tip">{this.props.tip}</p>
+        </Typing>
+      );
+    }
 
+    if(this.props.drawing) {
       return (
         <div className="line" ref={(el) => { this.lineRef = el; }}>
           <p>
@@ -57,6 +65,7 @@ class Line extends Component {
       return (
         <div className="line">
           <p>{parts}</p>
+          {tip}
         </div>
       );
     }
@@ -79,8 +88,8 @@ const mapDispatchToProps = dispatch => {
     onHotspotHoverChanged: (id, isHovering) => {
       dispatch(isHovering ? hoverHotspot(id) : unhoverHotspot(id));
     },
-    onHotspotClick: (id) => {
-      dispatch(hotspotClick(id));
+    onHotspotClick: (id, pageIdx, lineIdx, partIdx) => {
+      dispatch(hotspotClick(id, pageIdx, lineIdx, partIdx));
     }
   }
 };

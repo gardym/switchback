@@ -19,8 +19,15 @@ const highwayPage = {
     { parts: [ "Where did they go?" ] },
     { parts: [ "You don't have any supplies to last the night." ] },
     { parts: [ "Unless someone dropped something on the ",
-               { type: "link-page", text: "ground", target: "ground" },
-               "." ] },
+               {
+                 type: "link-hotspot",
+                 text: "ground",
+                 id: "ground",
+                 target: "groundPage"
+               },
+               "." ],
+      tip: "You feel around. Nothing but dirty ashphalt. If you could see in the dark or something..."
+    },
     { parts: [ "Maybe if you go back down the ",
                { type: "link-page", text: "bank", target: "bank" },
                " and back up they'll magically appear..." ] }
@@ -48,10 +55,7 @@ const somethingPage = {
     { parts: [ "It's a ",
              { type: "link-item", text: "broken car headlamp", target: "carlamp" },
                ". Guess you're not the first person to come unstuck on this stretch of ",
-             { type: "link-page", text: "highway", target: "highway" }, "." ] },
-    { parts: [ "You could search the ",
-             { type: "link-hotspot", text: "ground", id: "ground", target: "groundPage" },
-             "." ] }
+             { type: "link-page", text: "highway", target: "highway" }, "." ] }
   ]
 };
 

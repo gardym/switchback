@@ -55,9 +55,12 @@ export const unhoverHotspot = id => {
   }
 }
 
-export const hotspotClick = id => {
+export const hotspotClick = (id, pageIdx, lineIdx, partIdx) => {
   return {
     type: "USE_HOTSPOT",
-    id
+    id,
+    pageIdx,
+    lineIdx,
+    partIdx
   }
 }

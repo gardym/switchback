@@ -87,6 +87,21 @@ const interaction = (fullState, action) => {
         interaction: nextState,
         pages: pages
       });
+    } else {
+      const nextStatePages = fullState.pages.map((p, pidx) => {
+        if(pidx === action.pageIdx) {
+          return Object.assign({}, p, {
+            lines: p.lines.map((l, lidx) => {
+              if(lidx === action.lineIdx) {
+                return Object.assign({}, l, { showTip: true });
+              }
+              return l;
+            })
+          });
+        }
+        return p;
+      });
+      return Object.assign({}, fullState, { pages: nextStatePages });
     }
   }
   return Object.assign({}, fullState, { interaction: nextState });

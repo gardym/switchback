@@ -15,7 +15,7 @@ const initialInventoryState = {
 };
 
 const initialCombinedState = {
-  pages: [ mapScriptPageToStatePage(Act5.pages.something) ],
+  pages: [ mapScriptPageToStatePage(Act5.pages.highway) ],
   interaction: initialInteractionState,
   inventory: initialInventoryState
 };
