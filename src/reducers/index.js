@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import Act5 from '../acts/act5';
 import inventory from './inventory';
 import { pages, mapScriptPageToStatePage } from './pages';

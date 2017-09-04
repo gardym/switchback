@@ -5,9 +5,10 @@ import { useInventoryItem, hoverInventoryItem, unhoverInventoryItem } from './ac
 
 class Inventory extends Component {
   render() {
-    const itemElements = this.props.inventory.items.map(i => {
+    const itemElements = this.props.inventory.items.map((i, idx) => {
       return (
         <InventoryItem text={i.text}
+                       key={`${i.id}_${idx}`}
                        onInventoryItemClicked={this.props.onInventoryItemClicked}
                        onHoverChanged={this.props.onHoverChanged}
                        id={i.id} />

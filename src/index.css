@@ -25,6 +25,7 @@ html, body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  overflow-y: hidden;
 }
 
 .inventory .item {

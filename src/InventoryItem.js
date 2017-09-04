@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
 import ReactHoverObserver from 'react-hover-observer';
 
 class InventoryItem extends Component {

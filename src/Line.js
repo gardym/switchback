@@ -17,26 +17,26 @@ class Line extends Component {
   }
 
   render() {
-    const parts = this.props.parts.map(p => {
+    const parts = this.props.parts.map((p, idx) => {
       if(typeof p === "string") {
-        return (<span>{p}</span>);
+        return (<span key={idx}>{p}</span>);
       } else {
         if(p.type === "link-page") {
-          return (<span className={p.type}
+          return (<span className={p.type} key={idx}
                         onClick={() => this.props.onLinkClick(p.target)}>{p.text}</span>);
         } else if (p.type === "link-item") {
-          return( <span className={p.type}
+          return( <span className={p.type} key={idx}
                         onClick={() => this.props.onItemClick(p.target)}>{p.text}</span>);
         } else if (p.type === "link-hotspot") {
           return (
-            <ReactHoverObserver className="hotspot-hover"
+            <ReactHoverObserver className="hotspot-hover" key={idx}
                 onHoverChanged={({isHovering}) => this.props.onHotspotHoverChanged(p.id, isHovering)}>
               <span className={p.type}
                   onClick={() => this.props.onHotspotClick(p.id)}>{p.text}</span>
             </ReactHoverObserver>
           );
         } else {
-          return( <span className={p.type}>{p.text}</span>);
+          return( <span className={p.type} key={idx}>{p.text}</span>);
         }
       }
     });
