@@ -10,13 +10,12 @@ const initialInteractionState = {
 
 const initialInventoryState = {
  items: [
-   Act5.items['poweredCarLamp'],
-   Act5.items['businessCard']
+   Act5.items['batteries']
  ]
 };
 
 const initialCombinedState = {
-  pages: [ mapScriptPageToStatePage(Act5.pages._init, { inventory: initialInventoryState }) ],
+  pages: [ mapScriptPageToStatePage(Act5.pages.highway, { inventory: initialInventoryState }) ],
   interaction: initialInteractionState,
   inventory: initialInventoryState
 };

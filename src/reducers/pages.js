@@ -4,10 +4,19 @@ export const mapScriptPageToStatePage = (page, fullState) => {
   return {
     id: page.id,
     lines: page.lines.map((l, idx) => {
-      if(l.unless) {
-        if(l.unless.type === 'inventoryContains') {
-          let applicableContains = l.unless.contains.filter(c => fullState.inventory.items.find(i => i.id === c));
-          if(applicableContains.length > 0) {
+      if(l.condition) {
+        if(l.condition.type === "inventory" && l.condition.rule === "doesNotContain") {
+          let applicableValues = l.condition.value.filter(
+            c => fullState.inventory.items.find(i => i.id === c)
+          );
+          if(applicableValues.length > 0) {
+            return null;
+          }
+        } else if (l.condition.type === "inventory" && l.condition.rule === "contains") {
+          let applicableValues = l.condition.value.filter(
+            c => fullState.inventory.items.find(i => i.id === c)
+          );
+          if(applicableValues.length === 0) {
             return null;
           }
         }
