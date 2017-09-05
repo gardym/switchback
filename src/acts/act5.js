@@ -112,13 +112,29 @@ const enginePage = {
       tip: "You can vaguely make out the traditional trucker hat from here."
     },
     { parts: [ "Has it come to this?" ] },
-    { parts: [ "Do you need to jump in front of it just to make them see you?" ] }
+    { parts: [ "Do you need to ",
+               { type: "link-page", text: "jump", target: "jump" },
+               " in front of it just to make them see you?" ] }
   ]
 };
 
 const flashDriverPage = {
   id: 'flashDriver',
   lines: [
+  ]
+};
+
+const jumpPage = {
+  id: 'jump',
+  lines: [
+    { parts: [ "You hold your breath and start counting..." ] },
+    { parts: [ "3... You're sure they'll see you in time..." ] },
+    { parts: [ "2... 70mph isn't that fast... is it?" ] },
+    { parts: [ "..." ] },
+    { parts: [ "This is no time for stupidity." ] },
+    { parts: [ "The truck roars past you without slowing, leaving you alone on the ",
+               { type: "link-page", text: "highway", target: "highway" },
+               "." ] }
   ]
 };
 
@@ -129,7 +145,8 @@ const pages = {
   something: somethingPage,
   ground: groundPage,
   engine: enginePage,
-  flashDriver: flashDriverPage
+  flashDriver: flashDriverPage,
+  jump: jumpPage
 };
 
 const items = {
