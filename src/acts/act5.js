@@ -26,7 +26,7 @@ const highwayPage = {
                  target: "groundPage"
                },
                "." ],
-      tip: "You feel around. Nothing but dirty ashphalt. If you could see in the dark or something..."
+      tip: "You scrub your fingers over the cold ashphalt. Nothing but dirt and hopelessness. It's too dark to see anything down there..."
     },
     { parts: [ "Maybe if you go back down the ",
                { type: "link-page", text: "bank", target: "bank" },
@@ -62,14 +62,14 @@ const somethingPage = {
 const groundPage = {
   id: 'ground',
   lines: [
-    { parts: [ "You find what looks like a ",
-               { type: "link-item", text: "business card", target: "businessCard" },
-               " amongst the dirt." ] },
-    { parts: [ "It's for a cop." ] },
-    { parts: [ "\"Ron Higglesworth.\"" ] },
-    { parts: [ "What's it doing ",
-               { type: "link-page", text: "here", target: "something" },
-               "?" ] }
+    { parts: [ "For a split second, the highway lights up in a flash." ] },
+    { parts: [ "You see a ",
+               { type: "link-item", text: "small, rectangular card", target: "businessCard" },
+               " on the ground." ] },
+    { parts: [ "... before the batteries short and an electric shock sends a spasm through your hand." ] },
+    { parts: [ "The ",
+               { type: "link-page", text: "highway", target: "highway" },
+               " returns to darkness but the light burns take a while to fade from your eyes." ] }
   ]
 };
 
