@@ -11,6 +11,10 @@ html, body {
   flex-direction: column;
 }
 
+.page {
+  border-top: 1px solid #fff;
+}
+
 .pages {
   flex: 1;
   overflow: auto;
