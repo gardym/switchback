@@ -5,8 +5,9 @@ const useHotspot = ({interaction, ...state}, action) => {
   if(interaction.firstItem && interaction.firstItem.selected) {
     let pages = [ ...state.pages ];
 
-    if(Act5.hotspots[action.id].useWith === interaction.firstItem.id) {
-      pages.push(mapScriptPageToStatePage(Act5.pages[Act5.hotspots[action.id].target], state));
+    if(Act5.hotspots[action.id].useWith[interaction.firstItem.id] !== undefined) {
+      let newPage = Act5.pages[Act5.hotspots[action.id].useWith[interaction.firstItem.id]];
+      pages.push(mapScriptPageToStatePage(newPage, state));
     }
 
     return Object.assign({}, state, {

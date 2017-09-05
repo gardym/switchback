@@ -174,8 +174,22 @@ const items = {
 };
 
 const hotspots = {
-  ground: { id: "ground", text: "ground", useWith: "poweredCarLamp", target: "ground" },
-  driver: { id: "driver", text: "driver", useWith: "poweredCarLamp", target: "flashDriver" }
+  ground: {
+    id: "ground",
+    text: "ground",
+    useWith: {
+      poweredCarLamp: "ground",
+      safePoweredCarLamp: "ground"
+    }
+  },
+  driver: {
+    id: "driver",
+    text: "driver",
+    useWith: {
+      poweredCarLamp: "flashDriver",
+      safePoweredCarLamp: "shineDriver"
+    }
+  }
 };
 
 const Act5 = {

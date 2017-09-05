@@ -18,7 +18,7 @@ html, body {
 .pages {
   flex: 1;
   overflow: auto;
-  height: 80vh;
+  height: 75vh;
   padding-left: 1rem;
   padding-right: 1rem;
   box-sizing: border-box;
@@ -42,7 +42,7 @@ html, body {
 }
 
 .interaction p {
-  height: 2rem;
+  height: 3rem;
   text-align: center;
 }
 
