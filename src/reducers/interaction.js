@@ -1,38 +1,15 @@
 import Act5 from '../acts/act5';
 import { mapScriptPageToStatePage } from './pages';
+import hoverInventoryItem from './interactions/hoverInventoryItem';
+import unhoverInventoryItem from './interactions/unhoverInventoryItem';
 
 const interaction = (fullState, action) => {
   const state = fullState.interaction;
   var nextState = fullState.interaction;
   if(action.type === "HOVER_INVENTORY_ITEM") {
-    if(!state.firstItem || !state.firstItem.selected) {
-      nextState = Object.assign({}, state, {
-        firstItem: {
-          id: action.id,
-          selected: false,
-          text: Act5.items[action.id].text
-        }
-      });
-    } else if(!state.secondItem) {
-      if(action.id === state.firstItem.id) {
-        nextState = state;
-      } else {
-        nextState = Object.assign({}, state, {
-          secondItem: {
-            id: action.id,
-            selected: false,
-            text: Act5.items[action.id].text,
-            type: 'item'
-          }
-        });
-      }
-    }
+    return hoverInventoryItem(fullState, action);
   } else if(action.type === "UNHOVER_INVENTORY_ITEM") {
-    if(state.firstItem && !state.firstItem.selected) {
-      nextState = Object.assign({}, state, { firstItem: null });
-    } else {
-      nextState = Object.assign({}, state, { secondItem: null });
-    }
+    return unhoverInventoryItem(fullState, action);
   } else if(action.type === "USE_INVENTORY_ITEM") {
     if(!state.firstItem.selected) {
       nextState = Object.assign({}, state, {
