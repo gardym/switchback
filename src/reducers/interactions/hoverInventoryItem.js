@@ -2,8 +2,10 @@ import Act5 from '../../acts/act5';
 
 const hoverInventoryItem = ({interaction, ...state}, action) => {
   let nextState = interaction;
+  let inventoryDescription = state.inventory.description;
 
   if(!interaction.firstItem || !interaction.firstItem.selected) {
+    inventoryDescription = Act5.items[action.id].hoverText;
     nextState = Object.assign({}, interaction, {
       firstItem: {
         id: action.id,
@@ -23,7 +25,13 @@ const hoverInventoryItem = ({interaction, ...state}, action) => {
       });
     }
   }
-  return Object.assign({}, state, { interaction: nextState });
+  return Object.assign({}, state, {
+    interaction: nextState,
+    inventory: {
+      ...state.inventory,
+      description: inventoryDescription
+    }
+  });
 }
 
 export default hoverInventoryItem;

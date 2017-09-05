@@ -6,7 +6,13 @@ const unhoverInventoryItem = ({interaction, ...state}, action) => {
   } else {
     nextState = Object.assign({}, interaction, { secondItem: null });
   }
-  return Object.assign({}, state, { interaction: nextState });
+  return Object.assign({}, state, {
+    interaction: nextState,
+    inventory: {
+      ...state.inventory,
+      description: null
+    }
+  });
 }
 
 export default unhoverInventoryItem;

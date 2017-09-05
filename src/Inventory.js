@@ -16,7 +16,12 @@ class Inventory extends Component {
     });
     return (
       <div className="inventory">
-        {itemElements}
+        <div className="inventory-items">
+          {itemElements}
+        </div>
+        <div className="inventory-description">
+          <p>{this.props.inventory.description}</p>
+        </div>
       </div>
     );
   }

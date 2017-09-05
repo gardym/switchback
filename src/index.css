@@ -18,7 +18,7 @@ html, body {
 .pages {
   flex: 1;
   overflow: auto;
-  height: 75vh;
+  height: 70vh;
   padding-left: 1rem;
   padding-right: 1rem;
   box-sizing: border-box;
@@ -26,19 +26,24 @@ html, body {
 
 .inventory {
   border-top: 1px solid #fff;
+}
+
+.inventory-items {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   overflow-y: hidden;
+  border-bottom: 1px solid #fff;
 }
 
-.inventory .item {
+.inventory-items .item {
   width: 25vw;
 }
 
 .inventory p {
   font-size: 1.2rem;
   text-align: center;
+  height: 100%;
 }
 
 .interaction p {
@@ -58,12 +63,9 @@ p {
   color: #eee;
 }
 
-.item-dialog {
+.inventory-description p {
   background-color: #320e2d;
-}
-
-.item-dialog p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0 1rem;
   margin: 0 0;
 }

@@ -23,7 +23,13 @@ const useInventoryItem = ({interaction, ...state}, action) => {
       firstItem: null,
       secondItem: null
     });
-    return Object.assign({}, state, { interaction: nextState, inventory: { items: items } });
+    return Object.assign({}, state, {
+      interaction: nextState,
+      inventory: {
+        ...state.inventory,
+        items: items
+      }
+    });
   }
   return Object.assign({}, state, { interaction: nextState });
 }

@@ -5,6 +5,7 @@ const inventory = (fullState, action) => {
     return {
       ...fullState,
       inventory: {
+        ...fullState.inventory,
         items: [
           ...fullState.inventory.items,
           Act5.items[action.id]
