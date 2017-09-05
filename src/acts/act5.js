@@ -121,6 +121,11 @@ const enginePage = {
 const flashDriverPage = {
   id: 'flashDriver',
   lines: [
+    { parts: [ "For a split second, the highway lights up in a flash." ] },
+    { parts: [ "... before the batteries short and an electric shock sends a spasm through your hand." ] },
+    { parts: [ "You could swear the truck slows a little as it sails past, leaving you alone on the ",
+               { type: "link-page", text: "highway", target: "highway" },
+               "." ] }
   ]
 };
 
