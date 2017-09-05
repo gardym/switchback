@@ -1,7 +1,7 @@
 import Act5 from '../../acts/act5';
 
 const useInventoryItem = ({interaction, ...state}, action) => {
-  var nextState = interaction;
+  let nextState = interaction;
 
   if(!interaction.firstItem.selected) {
     nextState = Object.assign({}, interaction, {
@@ -12,7 +12,7 @@ const useInventoryItem = ({interaction, ...state}, action) => {
       }
     });
   } else {
-    var items = state.inventory.items;
+    let items = state.inventory.items;
     if(Act5.items[interaction.firstItem.id].useWith === action.id) {
       items = state.inventory.items.filter(i => {
         return i.id !== interaction.firstItem.id && i.id !== action.id

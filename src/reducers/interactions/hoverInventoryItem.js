@@ -1,7 +1,7 @@
 import Act5 from '../../acts/act5';
 
 const hoverInventoryItem = ({interaction, ...state}, action) => {
-  var nextState = interaction;
+  let nextState = interaction;
 
   if(!interaction.firstItem || !interaction.firstItem.selected) {
     nextState = Object.assign({}, interaction, {
