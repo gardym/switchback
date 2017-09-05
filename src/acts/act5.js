@@ -168,6 +168,12 @@ const jumpPage = {
   ]
 };
 
+const headlampsPage = {
+  id: 'headlamps',
+  lines: [
+  ]
+};
+
 const pages = {
   _init: initPage,
   highway: highwayPage,
@@ -178,6 +184,7 @@ const pages = {
   engine: enginePage,
   flashDriver: flashDriverPage,
   shineDriver: shineDriverPage,
+  headlamps: headlampsPage,
   jump: jumpPage
 };
 
