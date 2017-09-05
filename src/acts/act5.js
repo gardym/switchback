@@ -20,8 +20,8 @@ const highwayPage = {
     { parts: [ "You don't have any supplies to last the night." ] },
     {
       unless: {
-        type: 'inventory',
-        contains: 'businessCard'
+        type: "inventoryContains",
+        contains: ["businessCard"]
       },
       parts: [ "Unless someone dropped something on the ",
                {
@@ -33,9 +33,15 @@ const highwayPage = {
                "." ],
       tip: "You scrub your fingers over the cold ashphalt. Nothing but dirt and hopelessness. It's too dark to see anything down there..."
     },
-    { parts: [ "Maybe if you go back down the ",
+    {
+      unless: {
+        type: "inventoryContains",
+        contains: ["carlamp", "poweredCarLamp"]
+      },
+      parts: [ "Maybe if you go back down the ",
                { type: "link-page", text: "bank", target: "bank" },
-               " and back up they'll magically appear..." ] }
+               " and back up they'll magically appear..." ]
+    }
   ]
 };
 

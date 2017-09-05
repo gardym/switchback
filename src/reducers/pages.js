@@ -5,8 +5,9 @@ export const mapScriptPageToStatePage = (page, fullState) => {
     id: page.id,
     lines: page.lines.map((l, idx) => {
       if(l.unless) {
-        if(l.unless.type === 'inventory') {
-          if(fullState.inventory.items.find(i => i.id === l.unless.contains)) {
+        if(l.unless.type === 'inventoryContains') {
+          let applicableContains = l.unless.contains.filter(c => fullState.inventory.items.find(i => i.id === c));
+          if(applicableContains.length > 0) {
             return null;
           }
         }
