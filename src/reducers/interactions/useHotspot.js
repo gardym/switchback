@@ -6,7 +6,7 @@ const useHotspot = ({interaction, ...state}, action) => {
     let pages = [ ...state.pages ];
 
     if(Act5.items[interaction.firstItem.id].useWith === action.id) {
-      pages.push(mapScriptPageToStatePage(Act5.pages[Act5.hotspots[action.id].target]));
+      pages.push(mapScriptPageToStatePage(Act5.pages[Act5.hotspots[action.id].target], state));
     }
 
     return Object.assign({}, state, {

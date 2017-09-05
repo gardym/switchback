@@ -18,7 +18,12 @@ const highwayPage = {
     { parts: [ "It's so cloudy you can barely see your hands in the moonlight" ] },
     { parts: [ "Where did they go?" ] },
     { parts: [ "You don't have any supplies to last the night." ] },
-    { parts: [ "Unless someone dropped something on the ",
+    {
+      unless: {
+        type: 'inventory',
+        contains: 'businessCard'
+      },
+      parts: [ "Unless someone dropped something on the ",
                {
                  type: "link-hotspot",
                  text: "ground",
