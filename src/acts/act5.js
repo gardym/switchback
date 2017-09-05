@@ -15,7 +15,7 @@ const initPage = {
 const highwayPage = {
   id: 'highway',
   lines: [
-    { parts: [ "It's so cloudy you can barely see your hands in the moonlight" ] },
+    { parts: [ "It's so cloudy you can barely see your hands in the moonlight." ] },
     { parts: [ "Where did they go?" ] },
     { parts: [ "You don't have any supplies to last the night." ] },
     {
@@ -155,10 +155,22 @@ const pages = {
 };
 
 const items = {
-  poweredCarLamp: { id: "poweredCarLamp", text: "Battery-powered car headlamp" },
+  poweredCarLamp: {
+    id: "poweredCarLamp",
+    text: "Battery-powered car headlamp",
+    useWith: "rubberSportsHand",
+    produces: "safePoweredCarLamp"
+  },
   carlamp: { id: "carlamp", text: "Broken car headlamp", useWith: "batteries", produces: "poweredCarLamp" },
   batteries: { id: "batteries", text: "Batteries", useWith: "carlamp", produces: "poweredCarLamp" },
-  businessCard: { id: "businessCard", text: "Business Card" }
+  businessCard: { id: "businessCard", text: "Business Card" },
+  rubberSportsHand: {
+    id: "rubberSportsHand",
+    text: "Novelty rubber 'foam' hand",
+    useWith: "poweredCarLamp",
+    produces: "safePoweredCarLamp"
+  },
+  safePoweredCarLamp: { id: "safePoweredCarLamp", text: "Rubber-handled, battery-powered, car headlamp" }
 };
 
 const hotspots = {
