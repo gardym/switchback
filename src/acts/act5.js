@@ -38,7 +38,7 @@ const highwayPage = {
       condition: {
         type: "inventory",
         rule: "doesNotContain",
-        value: ["carlamp", "poweredCarLamp"]
+        value: ["carlamp", "poweredCarLamp", "safePoweredCarLamp"]
       },
       parts: [ "Maybe if you go back down the ",
                { type: "link-page", text: "bank", target: "bank" },
@@ -48,7 +48,7 @@ const highwayPage = {
       condition: {
         type: "inventory",
         rule: "contains",
-        value: ["poweredCarLamp"]
+        value: ["poweredCarLamp", "safePoweredCarLamp"]
       },
       parts: [ "You can hear the low rumbling of an ",
                { type: "link-page", text: " engine ", target: "engine" },
@@ -96,6 +96,19 @@ const groundPage = {
   ]
 };
 
+const shineGroundPage = {
+  id: 'shineGround',
+  lines: [
+    { parts: [ "You see a ",
+               { type: "link-item", text: "small, rectangular card", target: "businessCard" },
+               " on the ground." ] },
+    { parts: [ "You flick the lamp off." ] },
+    { parts: [ "The ",
+               { type: "link-page", text: "highway", target: "highway" },
+               " returns to darkness but the light burns take a while to fade from your eyes." ] }
+  ]
+};
+
 const enginePage = {
   id: 'engine',
   lines: [
@@ -129,6 +142,18 @@ const flashDriverPage = {
   ]
 };
 
+const shineDriverPage = {
+  id: 'shineDriver',
+  lines: [
+    { parts: [ "You wave your improvised torch madly at the approaching truck." ] },
+    { parts: [ "You've never been so happy to hear the unmistakable sound of an engine brake." ] },
+    { parts: [ "The batteries finally melt the rubber onto the contacts and the lamp fizzles off." ] },
+    { parts: [ "The truck is slow enough you can probably step out into the dazzling light of its ",
+               { type: "link-page", text: "headlamps", target: "headlamps" },
+               "." ] }
+  ]
+};
+
 const jumpPage = {
   id: 'jump',
   lines: [
@@ -149,8 +174,10 @@ const pages = {
   bank: bankPage,
   something: somethingPage,
   ground: groundPage,
+  shineGround: shineGroundPage,
   engine: enginePage,
   flashDriver: flashDriverPage,
+  shineDriver: shineDriverPage,
   jump: jumpPage
 };
 
@@ -179,7 +206,7 @@ const hotspots = {
     text: "ground",
     useWith: {
       poweredCarLamp: "ground",
-      safePoweredCarLamp: "ground"
+      safePoweredCarLamp: "shineGround"
     }
   },
   driver: {
