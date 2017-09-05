@@ -10,7 +10,7 @@ const initialInteractionState = {
 
 const initialInventoryState = {
  items: [
-   Act5.items['batteries']
+   Act5.items['poweredCarLamp']
  ]
 };
 

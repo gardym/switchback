@@ -50,7 +50,9 @@ const highwayPage = {
         rule: "contains",
         value: ["poweredCarLamp"]
       },
-      parts: [ "You can hear the sound of a truck approaching in the distance." ]
+      parts: [ "You can hear the low rumbling of an ",
+               { type: "link-page", text: " engine ", target: "engine" },
+               " approaching in the distance." ]
     }
   ]
 };
@@ -94,23 +96,52 @@ const groundPage = {
   ]
 };
 
+const enginePage = {
+  id: 'engine',
+  lines: [
+    { parts: [ "Something big, no huge, tearing down the highway towards you." ] },
+    {
+      parts: [ "Whoever the ",
+               {
+                 type: "link-hotspot",
+                 text: "driver",
+                 id: "driver",
+                 target: "driverPage"
+               },
+               " is, they're not slowing down." ],
+      tip: "You can vaguely make out the traditional trucker hat from here."
+    },
+    { parts: [ "Has it come to this?" ] },
+    { parts: [ "Do you need to jump in front of it just to make them see you?" ] }
+  ]
+};
+
+const flashDriverPage = {
+  id: 'flashDriver',
+  lines: [
+  ]
+};
+
 const pages = {
   _init: initPage,
   highway: highwayPage,
   bank: bankPage,
   something: somethingPage,
-  ground: groundPage
+  ground: groundPage,
+  engine: enginePage,
+  flashDriver: flashDriverPage
 };
 
 const items = {
-  poweredCarLamp: { id: "poweredCarLamp", text: "Battery-powered car headlamp", useWith: "ground" },
+  poweredCarLamp: { id: "poweredCarLamp", text: "Battery-powered car headlamp" },
   carlamp: { id: "carlamp", text: "Broken car headlamp", useWith: "batteries", produces: "poweredCarLamp" },
   batteries: { id: "batteries", text: "Batteries", useWith: "carlamp", produces: "poweredCarLamp" },
   businessCard: { id: "businessCard", text: "Business Card" }
 };
 
 const hotspots = {
-  ground: { id: "ground", text: "ground", useWith: "poweredCarLamp", target: "ground" }
+  ground: { id: "ground", text: "ground", useWith: "poweredCarLamp", target: "ground" },
+  driver: { id: "driver", text: "driver", useWith: "poweredCarLamp", target: "flashDriver" }
 };
 
 const Act5 = {
