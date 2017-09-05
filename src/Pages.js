@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 
 class Pages extends Component {
   render() {
-    const pages = [this.props.pages[this.props.pages.length - 1]].map((p, idx) => {
+    let pages = this.props.pages.map((p, idx) => {
       return <Page key={`${p}_${idx}`} page={p} idx={idx} />
     });
+    pages = pages[pages.length - 1];
     return (
         <div>
           <div className="pages">
