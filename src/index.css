@@ -36,6 +36,10 @@ html, body {
   border-bottom: 1px solid #fff;
 }
 
+.inventory-items > * {
+  border-right: 1px solid #fff;
+}
+
 .inventory-items .item {
   width: 25vw;
 }
