@@ -171,6 +171,98 @@ const jumpPage = {
 const headlampsPage = {
   id: 'headlamps',
   lines: [
+    { parts: [ "The squeal of compressed air escapes from the truck." ] },
+    { parts: [ "You shield your eyes from the headlamps and try to peer into the cab." ] },
+    { parts: [ "You  think you can make out long hair below a trucker cap." ] },
+    { parts: [ "The ",
+               { type: "link-page", text: "door", target: "door" },
+               " swings open." ] }
+  ]
+};
+
+const doorPage = {
+  id: 'door',
+  lines: [
+    { parts: [ "\"Not so smart to be running around in the middle of a highway\"" ] },
+    { parts: [ "\"'specially this one...\"" ] },
+    { parts: [ "\"You need a ride, kid?\"" ] },
+    {
+      condition: {
+        type: "inventory",
+        rule: "contains",
+        value: ["businessCard"]
+      },
+      parts: [
+        { type: "link-page", text: "Where ya goin'?", target: "goingCard" }
+      ]
+    },
+    {
+      condition: {
+        type: "inventory",
+        rule: "doesNotContain",
+        value: ["businessCard"]
+      },
+      parts: [
+        { type: "link-page", text: "Where ya goin'?", target: "goingNoCard" }
+      ]
+    }
+  ]
+};
+
+const goingCardPage = {
+  id: 'goingCard',
+  lines: [
+    { parts: [ "\"Princedale.\"" ] },
+    { parts: [ "\"Well why didn't you say?\"" ] },
+    { parts: [ "\"Get on in here.\"" ] }
+  ]
+};
+
+const goingNoCardPage = {
+  id: 'goingNoCard',
+  lines: [
+    { parts: [ "\"Ummm, I... I don't know.\"" ] },
+    { parts: [ "\"What? No-one had the decency to leave you a note? The world, these days...\"" ] },
+    { parts: [ "\"I can ",
+               { type: "link-page", text: "wait", target: "wait" },
+               " 5 minutes, no more.\"" ] }
+  ]
+};
+
+const waitPage = {
+  id: 'wait',
+  lines: [
+    { parts: [ "You rack your brains. Your head hurts. Think think think dammit." ] },
+    { parts: [ "We were going to Grandad's. Wait... where even is Grandad's?" ] },
+    { parts: [ "Who even knows if that's where they've gone?" ] },
+    { parts: [ "All you know is you've got to get off this ",
+               { type: "link-page", text: "highway", target: "highwayTruck" },
+               "." ] }
+  ]
+};
+
+const highwayTruckPage = {
+  id: 'highwayTruck',
+  lines: [
+    { parts: [ "Okay. Calm down. The driver said they'd wait for you. Maybe." ] },
+    { parts: [ "But there's no point waiting if you don't know where you're going." ] },
+    { parts: [ "Gotta think." ] },
+    { parts: [ "Check the ",
+               { type: "link-page", text: "ground", target: "groundTruck" },
+               " once more?" ] }
+  ]
+};
+
+const groundTruckPage = {
+  id: 'groundTruck',
+  lines: [
+    { parts: [ "In the bright lights of the truck headlamps it's easier to make out a ",
+               { type: "link-item", text: "small, rectangular card", target: "businessCard" },
+               " on the dirty ashphalt." ] },
+    { parts: [ "This must be it." ] },
+    { parts: [ "Something on this card must be useful to your ",
+               { type: "link-page", text: "new friend", target: "door" },
+               "." ] }
   ]
 };
 
@@ -185,6 +277,12 @@ const pages = {
   flashDriver: flashDriverPage,
   shineDriver: shineDriverPage,
   headlamps: headlampsPage,
+  door: doorPage,
+  goingCard: goingCardPage,
+  goingNoCard: goingNoCardPage,
+  wait: waitPage,
+  highwayTruck: highwayTruckPage,
+  groundTruck: groundTruckPage,
   jump: jumpPage
 };
 
