@@ -1,6 +1,4 @@
-import Act5 from '../../acts/act5';
-
-const hoverHotspot = ({interaction, ...state}, action) => {
+const hoverHotspot = ({interaction, ...state}, action, act) => {
   let nextState = interaction;
   if(interaction.firstItem && interaction.firstItem.selected) {
     nextState = Object.assign({}, interaction, {
@@ -8,7 +6,7 @@ const hoverHotspot = ({interaction, ...state}, action) => {
         id: action.id,
         selected: false,
         type: 'hotspot',
-        text: Act5.hotspots[action.id].text
+        text: act.hotspots[action.id].text
       }
     });
   }
