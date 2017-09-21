@@ -1,12 +1,11 @@
-import Act5 from '../../acts/act5';
 import { mapScriptPageToStatePage } from '../pages';
 
-const useHotspot = ({interaction, ...state}, action) => {
+const useHotspot = ({interaction, ...state}, action, act) => {
   if(interaction.firstItem && interaction.firstItem.selected) {
     let pages = [ ...state.pages ];
 
-    if(Act5.hotspots[action.id].useWith[interaction.firstItem.id] !== undefined) {
-      let newPage = Act5.pages[Act5.hotspots[action.id].useWith[interaction.firstItem.id]];
+    if(act.hotspots[action.id].useWith[interaction.firstItem.id] !== undefined) {
+      let newPage = act.pages[act.hotspots[action.id].useWith[interaction.firstItem.id]];
       pages.push(mapScriptPageToStatePage(newPage, state));
     }
 

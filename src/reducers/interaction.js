@@ -14,7 +14,7 @@ const interaction = (fullState, action) => {
     case "UNHOVER_HOTSPOT":
       return interactions.unhoverHotspot(fullState, action);
     case "USE_HOTSPOT":
-      return interactions.useHotspot(fullState, action);
+      return interactions.useHotspot(fullState, action, Act5);
     default:
       return fullState;
   }
