@@ -1,5 +1,3 @@
-import Act5 from '../acts/act5';
-
 export const mapScriptPageToStatePage = (page, fullState) => {
   return {
     id: page.id,
@@ -46,13 +44,13 @@ const drawNextLine = (lines, idx) => {
   });
 }
 
-export const pages = (fullState, action) => {
+export const pages = (fullState, action, act) => {
   var state = fullState.pages;
   var nextState = state;
   if(action.type === "ADD_PAGE") {
     nextState = [
       ...state,
-      mapScriptPageToStatePage(Act5.pages[action.id], fullState)
+      mapScriptPageToStatePage(act.pages[action.id], fullState)
     ];
   } else if(action.type === "DRAW_NEXT_LINE") {
     nextState = state.map(p => {
