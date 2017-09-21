@@ -8,7 +8,7 @@ const interaction = (fullState, action) => {
     case "UNHOVER_INVENTORY_ITEM":
       return interactions.unhoverInventoryItem(fullState, action);
     case "USE_INVENTORY_ITEM":
-    return interactions.useInventoryItem(fullState, action);
+    return interactions.useInventoryItem(fullState, action, Act5);
     case "HOVER_HOTSPOT":
       return interactions.hoverHotspot(fullState, action, Act5);
     case "UNHOVER_HOTSPOT":
