@@ -1,19 +1,21 @@
 import Act5 from '../acts/act5';
 
-const inventory = (fullState, action) => {
+const inventory = (state, action, act) => {
   if(action.type === "PICK_UP_ITEM") {
-    return {
-      ...fullState,
-      inventory: {
-        ...fullState.inventory,
-        items: [
-          ...fullState.inventory.items,
-          Act5.items[action.id]
-        ]
+    if(!state.inventory.items.find(i => i.id === action.id)) {
+      return {
+        ...state,
+        inventory: {
+          ...state.inventory,
+          items: [
+            ...state.inventory.items,
+            act.items[action.id]
+          ]
+        }
       }
     }
   }
-  return fullState;
+  return state;
 }
 
 export default inventory;
