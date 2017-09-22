@@ -22,7 +22,7 @@ const initialCombinedState = {
 };
 
 const storeApp = (state = initialCombinedState, action) => {
-  var nextState = Object.assign({}, interaction(state, action));
+  var nextState = Object.assign({}, interaction(state, action, Act5));
   nextState = Object.assign({}, inventory(nextState, action, Act5));
   nextState = Object.assign({}, pages(nextState, action, Act5));
   return nextState;
