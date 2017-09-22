@@ -8,6 +8,7 @@
     "react-dom": "^15.6.1",
     "react-hover-observer": "^2.0.1",
     "react-redux": "^5.0.6",
+    "react-scripts": "1.0.13",
     "react-typing-animation": "^1.1.5",
     "redux": "^3.7.2"
   },
