@@ -1,4 +1,4 @@
-import useInventoryItem from './useInventoryItem';
+import useInventoryItem from '../useInventoryItem';
 
 describe('if no first item is selected', () => {
   it('selects this one', () => {

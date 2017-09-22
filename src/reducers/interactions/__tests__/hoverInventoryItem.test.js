@@ -1,4 +1,4 @@
-import hoverInventoryItem from './hoverInventoryItem';
+import hoverInventoryItem from '../hoverInventoryItem';
 
 const action = { id: 'balloon' };
 const act = { items: { balloon: { text: 'Balloon', hoverText: 'A balloon' },

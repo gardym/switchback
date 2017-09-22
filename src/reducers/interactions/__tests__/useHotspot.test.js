@@ -1,4 +1,4 @@
-import useHotspot from './useHotspot';
+import useHotspot from '../useHotspot';
 
 describe('when a first item is selected', () => {
   it('uses the item with the hotspot, moves page and deselects the item', () => {

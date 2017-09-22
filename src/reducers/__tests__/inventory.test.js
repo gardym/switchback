@@ -1,4 +1,4 @@
-import inventory from './inventory';
+import inventory from '../inventory';
 
 const action = { type: 'PICK_UP_ITEM', id: 'banana' };
 const act = { items: { banana: { id: 'banana' } } };

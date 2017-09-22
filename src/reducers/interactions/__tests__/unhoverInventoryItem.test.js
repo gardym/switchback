@@ -1,4 +1,4 @@
-import unhoverInventoryItem from './unhoverInventoryItem';
+import unhoverInventoryItem from '../unhoverInventoryItem';
 
 const action = { };
 

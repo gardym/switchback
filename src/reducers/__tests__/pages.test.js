@@ -1,4 +1,4 @@
-import { pages } from './pages';
+import { pages } from '../pages';
 
 const action = { type: 'ADD_PAGE', id: 'beach' };
 

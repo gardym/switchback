@@ -1,4 +1,4 @@
-import hoverHotspot from './hoverHotspot';
+import hoverHotspot from '../hoverHotspot';
 
 const action = { id: 'ground' };
 

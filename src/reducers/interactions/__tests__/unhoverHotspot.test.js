@@ -1,4 +1,4 @@
-import unhoverHotspot from './unhoverHotspot';
+import unhoverHotspot from '../unhoverHotspot';
 
 const action = { };
 const state = {
