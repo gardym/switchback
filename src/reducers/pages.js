@@ -45,8 +45,8 @@ const drawNextLine = (lines, idx) => {
 }
 
 export const pages = (fullState, action, act) => {
-  var state = fullState.pages;
-  var nextState = state;
+  let state = fullState.pages;
+  let nextState = state;
   if(action.type === "ADD_PAGE") {
     nextState = [
       ...state,

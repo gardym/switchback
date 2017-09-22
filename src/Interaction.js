@@ -7,7 +7,7 @@ class Interaction extends Component {
       return (<div className="interaction"><p></p></div>);
     }
 
-    var secondItemElement = null;
+    let secondItemElement = null;
     if(this.props.secondItem) {
       const className = `link-${this.props.secondItem.type}`;
       secondItemElement = (<span className={className}>{this.props.secondItem.text}</span>);

@@ -41,7 +41,7 @@ class Line extends Component {
       }
     });
 
-    var tip = "";
+    let tip = "";
     if(this.props.showTip) {
       tip = (
         <Typing cursor={false} speed={4}>
