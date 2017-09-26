@@ -85,7 +85,7 @@ const somethingPage = {
 const groundPage = {
   id: 'ground',
   lines: [
-    { parts: [ "For a split second, the highway lights up in a flash." ] },
+    { parts: [ "For a split second, the highway lights up with a flash." ] },
     { parts: [ "You see a ",
                { type: "link-item", text: "small, rectangular card", target: "businessCard" },
                " on the ground." ] },
@@ -112,22 +112,22 @@ const shineGroundPage = {
 const enginePage = {
   id: 'engine',
   lines: [
-    { parts: [ "Something big, no huge, tearing down the highway towards you." ] },
+    { parts: [ "Something big, no... huge, tearing down the highway towards you." ] },
     {
-      parts: [ "Whoever the ",
+      parts: [ "Maybe the ",
                {
                  type: "link-hotspot",
                  text: "driver",
                  id: "driver",
                  target: "driverPage"
                },
-               " is, they're not slowing down." ],
+               " hasn't seen you, or maybe they just don't care." ],
       tip: "You can vaguely make out the traditional trucker hat from here."
     },
-    { parts: [ "Has it come to this?" ] },
+    { parts: [ "Either way, they're not slowing down." ] },
     { parts: [ "Do you need to ",
                { type: "link-page", text: "jump", target: "jump" },
-               " in front of it just to make them see you?" ] }
+               " into the road just to make them see you?" ] }
   ]
 };
 
@@ -147,8 +147,8 @@ const shineDriverPage = {
   lines: [
     { parts: [ "You wave your improvised torch madly at the approaching truck." ] },
     { parts: [ "You've never been so happy to hear the unmistakable sound of an engine brake." ] },
-    { parts: [ "The batteries finally melt the rubber onto the contacts and the lamp fizzles off." ] },
-    { parts: [ "The truck is slow enough you can probably step out into the dazzling light of its ",
+    { parts: [ "Your improvised lamp flickers off as the batteries melt the rubber hand over the contacts." ] },
+    { parts: [ "The truck slows enough for you to step out into the dazzling light of its ",
                { type: "link-page", text: "headlamps", target: "headlamps" },
                "." ] }
   ]
@@ -160,9 +160,7 @@ const jumpPage = {
     { parts: [ "You hold your breath and start counting..." ] },
     { parts: [ "3... You're sure they'll see you in time..." ] },
     { parts: [ "2... 70mph isn't that fast... is it?" ] },
-    { parts: [ "..." ] },
-    { parts: [ "This is no time for stupidity." ] },
-    { parts: [ "The truck roars past you without slowing, leaving you alone on the ",
+    { parts: [ "While you're calculating stopping distances in your head the truck roars past you without slowing, leaving you alone on the ",
                { type: "link-page", text: "highway", target: "highway" },
                "." ] }
   ]
