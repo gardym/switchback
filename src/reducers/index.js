@@ -1,4 +1,6 @@
 import Act5 from '../acts/act5';
+import items from '../acts/items';
+
 import inventory from './inventory';
 import { pages, mapScriptPageToStatePage } from './pages';
 import interaction from './interaction';
@@ -10,13 +12,15 @@ const initialInteractionState = {
 
 const initialInventoryState = {
  items: [
-   Act5.items['rubberSportsHand'],
-   Act5.items['batteries']
+   items['rubberSportsHand'],
+   items['batteries']
  ]
 };
 
 const initialPageState = [
-  mapScriptPageToStatePage(Act5.pages._init, { inventory: initialInventoryState }) 
+  mapScriptPageToStatePage(Act5.pages._init, {
+    inventory: initialInventoryState
+  })
 ];
 
 const initialCombinedState = {
@@ -26,8 +30,8 @@ const initialCombinedState = {
 };
 
 const storeApp = (state = initialCombinedState, action) => {
-  let nextState = Object.assign({}, interaction(state, action, Act5));
-  nextState = Object.assign({}, inventory(nextState, action, Act5));
+  let nextState = Object.assign({}, interaction(state, action, Act5, items));
+  nextState = Object.assign({}, inventory(nextState, action, items));
   nextState = Object.assign({}, pages(nextState, action, Act5));
   return nextState;
 }

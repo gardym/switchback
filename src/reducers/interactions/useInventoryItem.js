@@ -1,4 +1,4 @@
-const useInventoryItem = ({interaction, ...state}, action, act) => {
+const useInventoryItem = ({interaction, ...state}, action, allItems) => {
   let nextState = interaction;
 
   if(!interaction.firstItem || !interaction.firstItem.selected) {
@@ -6,16 +6,16 @@ const useInventoryItem = ({interaction, ...state}, action, act) => {
       firstItem: {
         id: action.id,
         selected: true,
-        text: act.items[action.id].text
+        text: allItems[action.id].text
       }
     });
   } else {
-    let items = state.inventory.items;
-    if(act.items[interaction.firstItem.id].useWith === action.id) {
-      items = state.inventory.items.filter(i => {
+    let inventoryItems = state.inventory.items;
+    if(allItems[interaction.firstItem.id].useWith === action.id) {
+      inventoryItems = inventoryItems.filter(i => {
         return i.id !== interaction.firstItem.id && i.id !== action.id
       });
-      items.push(act.items[act.items[interaction.firstItem.id].produces]);
+      inventoryItems.push(allItems[allItems[interaction.firstItem.id].produces]);
     }
     nextState = Object.assign({}, interaction, {
       firstItem: null,
@@ -25,7 +25,7 @@ const useInventoryItem = ({interaction, ...state}, action, act) => {
       interaction: nextState,
       inventory: {
         ...state.inventory,
-        items: items
+        items: inventoryItems
       }
     });
   }
