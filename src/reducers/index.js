@@ -1,12 +1,13 @@
 import Act4 from '../acts/act4';
-import Act5 from '../acts/act5';
+import Act5 from '../acts/act5.json';
+import Act5Hotspots from '../acts/act5-hotspots';
 import items from '../acts/items';
 
 import inventory from './inventory';
 import { pages, mapScriptPageToStatePage } from './pages';
 import interaction from './interaction';
 
-const currentAct = Act5;
+const currentAct = Object.assign({}, Act5, { hotspots: Act5Hotspots });
 
 const initialInteractionState = {
   firstItem: null,

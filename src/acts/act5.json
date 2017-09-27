@@ -1,0 +1,221 @@
+{
+    "pages": {
+        "_init": {
+            "id": "_init",
+            "lines": [
+                {
+                    "parts": [
+                        "The ",
+                        {
+                            "target": "highway",
+                            "text": "highway",
+                            "type": "link-page"
+                        },
+                        " stretches out, straight, as far as you can see in both directions."
+                    ]
+                },
+                {
+                    "parts": [
+                        "A car can't just disappear... can it?"
+                    ]
+                },
+                {
+                    "parts": [
+                        "And what about that other voice?"
+                    ]
+                },
+                {
+                    "parts": [
+                        "Maybe if you went back down the ",
+                        {
+                            "target": "bank",
+                            "text": "bank",
+                            "type": "link-page"
+                        },
+                        " and came back up they'll magically appear..."
+                    ]
+                }
+            ]
+        },
+        "bank": {
+            "id": "bank",
+            "lines": [
+                {
+                    "parts": [
+                        "You take the bank slowly, more carefully this time."
+                    ]
+                },
+                {
+                    "parts": [
+                        "Slow enough that your foot just catches on ",
+                        {
+                            "target": "something",
+                            "text": "something",
+                            "type": "link-page"
+                        },
+                        " without sending you tumbling."
+                    ]
+                },
+                {
+                    "parts": [
+                        "There's nothing else down here but bushes and woods as far as you can see, which isn't far in this light."
+                    ]
+                },
+                {
+                    "parts": [
+                        "Might as well try the ",
+                        {
+                            "target": "highway",
+                            "text": "highway",
+                            "type": "link-page"
+                        },
+                        " again."
+                    ]
+                }
+            ]
+        },
+        "ground": {
+            "id": "ground",
+            "lines": [
+                {
+                    "parts": [
+                        "For a split second, the highway lights up wth a flash."
+                    ]
+                },
+                {
+                    "parts": [
+                        "You see a ",
+                        {
+                            "target": "businessCard",
+                            "text": "small, rectangular card",
+                            "type": "link-item"
+                        },
+                        " on the ground."
+                    ]
+                },
+                {
+                    "parts": [
+                        "... before the batteries short and an electric shocks sends a spasm through your hand."
+                    ]
+                },
+                {
+                    "parts": [
+                        "The ",
+                        {
+                            "target": "highway",
+                            "text": "highway",
+                            "type": "link-page"
+                        },
+                        " returns to darkness but the light burns take a while to fade from your eyes"
+                    ]
+                }
+            ]
+        },
+        "highway": {
+            "id": "highway",
+            "lines": [
+                {
+                    "parts": [
+                        "It's so cloudy you can barey see your hands in the moonlight."
+                    ]
+                },
+                {
+                    "parts": [
+                        "Where did they go?"
+                    ]
+                },
+                {
+                    "parts": [
+                        "You don't have any supplies to last the night."
+                    ]
+                },
+                {
+                    "condition": {
+                        "rule": "doesNotContain",
+                        "type": "inventory",
+                        "value": [
+                            "businessCard"
+                        ]
+                    },
+                    "parts": [
+                        "Unless someone dropped something on the ",
+                        {
+                            "id": "ground",
+                            "target": "ground",
+                            "text": "ground",
+                            "tip": "You scrub your fingers over the cold ashphalt. Nothing but dirt and hopelessness. It's too dark to see anything down there...",
+                            "type": "link-hotspot"
+                        },
+                        ""
+                    ]
+                },
+                {
+                    "condition": {
+                        "rule": "doesNotContain",
+                        "type": "inventory",
+                        "value": [
+                            "carlamp",
+                            "poweredCarLamp",
+                            "safePoweredCarLamp"
+                        ]
+                    },
+                    "parts": [
+                        "Maybe if you go back down the ",
+                        {
+                            "target": "bank",
+                            "text": "bank",
+                            "type": "link-page"
+                        },
+                        " and come back up they'll magically appear..."
+                    ]
+                },
+                {
+                    "condition": {
+                        "rule": "contains",
+                        "type": "inventory",
+                        "value": [
+                            "poweredCarLamp",
+                            "safePoweredCarLamp"
+                        ]
+                    },
+                    "parts": [
+                        "You can hear the low rumbling of an ",
+                        {
+                            "target": "engine",
+                            "text": "engine",
+                            "type": "link-page"
+                        },
+                        " approaching in the distance"
+                    ]
+                }
+            ]
+        },
+        "something": {
+            "id": "something",
+            "lines": [
+                {
+                    "parts": [
+                        "You feel around at your feet for something hard."
+                    ]
+                },
+                {
+                    "parts": [
+                        "It's a ",
+                        {
+                            "target": "carlamp",
+                            "text": "broken car headlamp",
+                            "type": "link-item"
+                        },
+                        ". Guess you're not the first person to come unstack on this stretch of ",
+                        {
+                            "target": "highway",
+                            "text": "highway",
+                            "type": "link-page"
+                        },
+                        "."
+                    ]
+                }
+            ]
+        }
+    }
+}
