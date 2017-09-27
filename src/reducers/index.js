@@ -1,4 +1,3 @@
-import Act4 from '../acts/act4';
 import Act5 from '../acts/act5.json';
 import Act5Hotspots from '../acts/act5-hotspots';
 import items from '../acts/items';
