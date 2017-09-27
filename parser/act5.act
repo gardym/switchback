@@ -12,7 +12,7 @@ And what about that other voice?
 Maybe if you went back down the #bank and came back up they'll magically appear...
 
 ^highway
-It's so cloudy you can barey see your hands in the moonlight.
+It's so cloudy you can barely see your hands in the moonlight.
 Where did they go?
 You don't have any supplies to last the night.
 ?inventory:doesNotContain:businessCard
@@ -37,4 +37,75 @@ For a split second, the highway lights up wth a flash.
 You see a *businessCard:"small, rectangular card" on the ground.
 ... before the batteries short and an electric shocks sends a spasm through your hand.
 The #highway returns to darkness but the light burns take a while to fade from your eyes
+
+^shineGround
+You see a *businessCard:"small, rectangular card" on the ground.
+You flick the lamp off.
+The #highway returns to darkness but the light burns take a while to fade from your eyes
+
+^engine
+Something big, no... huge, tearing down the highway towards you.
+Maybe the @driver:"driver":"You can vaguely make out the traditional trucker hat from here" hasn't seen you, or maybe they just don't care.
+Either way, they're not slowing down.
+Do you to #jump into the road just to make them see you?
+
+^flashDriver
+For a split second, the highway lights up with a flash.
+... before the batteries short and an electric shock sends a spasm through your hand.
+You could swear the truck slows a little as it sails past, leaving you alone on the #highway.
+
+^shineDriver
+You wave your improvised torch madly at the approaching truck.
+You've never been so happy to hear the unmistakable sound of an engine brake.
+Your improvised lamp flickers off as the batteries melt the rubber hand over the contacts.
+The truck slows enough for you to step out into the dazzling light of its #headlamps
+
+^jump
+You hold your breath and start counting...
+3... They'll definitely see you in time...
+2... 70mph isn't that fast... is it?
+While you're calculating stopping distances in your head the truck roars past without slowing, leave you alone on the #highway.
+
+^headlamps
+The squeal of compressed air escapes from the truck.
+You shield your eyes from the headlamps and try to peer into the cab.
+You think you can make out long hair below a trucker cap.
+The #door swings open.
+
+^door
+Not so smart to be running around in the middle of a highway
+'specially this one...
+You need a ride, kid?
+?inventory:contains:businessCard
+  #goingCard:"Where ya goin'?"
+?inventory:doesNotContain:businessCard
+  #goingNoCard:"Where ya goin'?"
+
+^goingCard
+Princedale.
+Well why didn't you say?
+Get on in.
+
+^goingNoCard
+Ummmm, I... I don't know
+What? No-one had the decency to leave you a note? The world, these days...
+I can #wait 5 minutes, no more.
+
+^wait
+You rack your brains. Your head hurts Think think think dammit.
+We were going to Grandad's. Wait... where even is Grandad's?
+Who even knows if that's where they are now?
+All you know if you've got to get off this #highwayTruck:"highway".
+
+^highwayTruck
+Okay. Calm down. The driver said they'd wait for you. Maybe.
+But there's no point waiting if you don't know where you're going.
+Gotta think.
+Check the #groundTruck:"ground" one last time?
+
+^groundTruck
+In the bright lights of the truck headlamps it's easier to make out a *businessCard:"small, rectangular card" on the dirty asphalt.
+This must be it.
+Something on this card must be useful to the #door:"driver".
+
 
