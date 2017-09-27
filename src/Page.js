@@ -4,6 +4,8 @@ import Line from './Line';
 class Page extends Component {
   render() {
     const lineElements = this.props.page.lines.map((l, idx) => {
+      let hotspot = l.parts.find(p => p.type === "link-hotspot");
+      let tip = hotspot ? hotspot.tip : null;
       return (
         <Line pageId={this.props.page.id}
           pageIdx={this.props.idx}
@@ -13,7 +15,7 @@ class Page extends Component {
           drawing={l.drawing}
           hidden={l.hidden}
           drawn={l.drawn}
-          tip={l.tip}
+          tip={tip}
           showTip={l.showTip} />
       );
     });
