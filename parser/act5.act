@@ -16,7 +16,7 @@ It's so cloudy you can barey see your hands in the moonlight.
 Where did they go?
 You don't have any supplies to last the night.
 ?inventory:doesNotContain:businessCard
-  Unless someone dropped something on the @ground:"You scrub your fingers over the cold ashphalt. Nothing but dirt and hopelessness. It's too dark to see anything down there..."
+  Unless someone dropped something on the @ground:"ground":"You scrub your fingers over the cold ashphalt. Nothing but dirt and hopelessness. It's too dark to see anything down there..."
 ?inventory:doesNotContain:carlamp,poweredCarLamp,safePoweredCarLamp
   Maybe if you go back down the #bank and come back up they'll magically appear...
 ?inventory:contains:poweredCarLamp,safePoweredCarLamp

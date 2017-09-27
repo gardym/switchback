@@ -34,12 +34,12 @@ link
   }
 
 hotspot
-  = "@" id:identifier ":" "\"" tip:(text whitespace?)* "\""
+  = "@" id:identifier ":" "\"" text:(text whitespace?)* "\"" ":" "\"" tip:(text whitespace?)* "\""
   {
   return {
     type: "link-hotspot",
     id: id,
-    text: id,
+    text: text,
     target: id,
     tip: tip
     };
