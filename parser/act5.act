@@ -6,10 +6,91 @@
 `?inventory:(doesNotContain|contains):more,than,one,item
 
 ^_init
+You wake up slowly. It's dark outside and the car's stopped.
+Your arm is numb from the weird way you were sleeping on it.
+Everyone else in the car is asleep.
+You really need to #pee but you're too #tired to get up.
+
+^tired
+You try to get comfortable but you can't.
+Tig groans and rolls away from you.
+Maybe you shouldn't have drunk the whole quart of Sprite.
+Every minute it feels like you need to #pee more and more.
+
+^pee
+You're too tired to wonder why Charlie stopped the car on the side of a highway.
+Anyway, there's no traffic, so maybe you could just go... #peeHere:"here"?
+Or you guess you could slip down the bank and into the #bushes where no one can see...
+
+^peeHere
+Then again, a highway is a highway.
+You're not taking your chances with your hoo-haa shining in the headlights of the next truck.
+The #bushes it is, damn it.
+
+^bushes
+You slip out of the car. None of the others stir.
+Halfway down the bank you catch your foot on something and stumble the rest of the way in a ball.
+'Owwww shit owwww what even...'
+Your knee hurts and your #bladder didn't appreciate the extra bumps either.
+
+^bladder
+It's dark down here and there are a lot more bushes than it looked like from the highway.
+Just as you... (you know, get down to business), you  see a light brush through the tops of the trees.
+A car door slams shut.
+Dammit, why did you have to choose this #exactMoment:"exact moment" to start peeing.
+
+^exactMoment
+What is that noise? It sounds like voices up on the highway.
+You wouldn't call them happy voices.
+Maybe #someone thought you broke down and they're just here to help?
+
+^someone
+A man's voice. Short. Sounds like it hasn't laughed in a long time.
+And Charlie saying 'Ok, ok' now.
+You strain to hear the #mansReply:"mans reply" but your ears feel sleepy and fuzzy.
+All you can hear over the silence is the sound of tinkling pee.
+
+^mansReply
+You keep your breathing as quiet as you can.
+It's shortening because your knee is still screaming at you.
+This is going on for an eternity.
+...
+...
+Aaaaaand, #finally, you're done.
+
+^finally
+An engine roars to life up on the highway.
+You need to get back to the car.
+In your rush to zip your jeans up you bang your knee on a tree.
+Owwww, shit. Again? Really?
+What the hell is happening #upThere:"up there"?
+
+^upThere
+You scramble up the bank.
+Gotta check that knee when you can.
+Maybe Samantha will have something for it in that stupid big bag of hers.
+Okay, breathe, it sounds like the car is getting further #away.
+
+^away
+You crest the bank and blink.
+...
+Nothing but empty highway in both directions.
+...
+No #cars. Not even one.
+
+^cars
+CHARLIE...
+ISABEL...
+What the hell just happened?
+CHARLIE... THIS ISN'T FUNNY YOU DICK.
+#_initHighway:"..."
+
+^_initHighway
 The #highway stretches out, straight, as far as you can see in both directions.
 A car can't just disappear... can it?
 And what about that other voice?
-Maybe if you went back down the #bank and came back up they'll magically appear...
+This can't be happening. It must be a dream.
+Maybe if you went back down the #bank and came back up this won't be real.
 
 ^highway
 It's so cloudy you can barely see your hands in the moonlight.
@@ -20,7 +101,7 @@ You don't have any supplies to last the night.
 ?inventory:doesNotContain:carlamp,poweredCarLamp,safePoweredCarLamp
   Maybe if you go back down the #bank and come back up they'll magically appear...
 ?inventory:contains:poweredCarLamp,safePoweredCarLamp
-  You can hear the low rumbling of an #engine approaching in the distance
+  You can hear the low rumbling of an #engine approaching in the distance.
 
 ^bank
 You take the bank slowly, more carefully this time.
@@ -36,18 +117,18 @@ It's a *carlamp:"broken car headlamp". Guess you're not the first person to come
 For a split second, the highway lights up wth a flash.
 You see a *businessCard:"small, rectangular card" on the ground.
 ... before the batteries short and an electric shocks sends a spasm through your hand.
-The #highway returns to darkness but the light burns take a while to fade from your eyes
+The #highway returns to darkness but the light burns take a while to fade from your eyes.
 
 ^shineGround
 You see a *businessCard:"small, rectangular card" on the ground.
 You flick the lamp off.
-The #highway returns to darkness but the light burns take a while to fade from your eyes
+The #highway returns to darkness but the light burns take a while to fade from your eyes.
 
 ^engine
 Something big, no... huge, tearing down the highway towards you.
 Maybe the @driver:"driver":"You can vaguely make out the traditional trucker hat from here" hasn't seen you, or maybe they just don't care.
 Either way, they're not slowing down.
-Do you to #jump into the road just to make them see you?
+Do you need to #jump into the road just to make them see you?
 
 ^flashDriver
 For a split second, the highway lights up with a flash.
@@ -58,7 +139,7 @@ You could swear the truck slows a little as it sails past, leaving you alone on 
 You wave your improvised torch madly at the approaching truck.
 You've never been so happy to hear the unmistakable sound of an engine brake.
 Your improvised lamp flickers off as the batteries melt the rubber hand over the contacts.
-The truck slows enough for you to step out into the dazzling light of its #headlamps
+The truck slows enough for you to step out into the dazzling light of its #headlamps.
 
 ^jump
 You hold your breath and start counting...
@@ -73,23 +154,23 @@ You think you can make out long hair below a trucker cap.
 The #door swings open.
 
 ^door
-Not so smart to be running around in the middle of a highway
-'specially this one...
-You need a ride, kid?
+'Not so smart to be running around in the middle of a highway'
+'specially this one...'
+'You need a ride, kid?'
 ?inventory:contains:businessCard
   #goingCard:"Where ya goin'?"
 ?inventory:doesNotContain:businessCard
   #goingNoCard:"Where ya goin'?"
 
 ^goingCard
-Princedale.
-Well why didn't you say?
-Get on in.
+'Princedale.'
+'Well why didn't you say?'
+'Get on in.'
 
 ^goingNoCard
-Ummmm, I... I don't know
-What? No-one had the decency to leave you a note? The world, these days...
-I can #wait 5 minutes, no more.
+'Ummmm, I... I don't know'
+'What? No-one had the decency to leave you a note? The world, these days...'
+'I can #wait 5 minutes, no more.'
 
 ^wait
 You rack your brains. Your head hurts Think think think dammit.
