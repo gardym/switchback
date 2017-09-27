@@ -13,12 +13,16 @@
     "redux": "^3.7.2"
   },
   "devDependencies": {
+    "pegjs": "^0.10.0",
     "react-scripts": "1.0.11"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "parser": "./node_modules/.bin/pegjs -o parser/act-parser.js parser/act.pegjs",
+    "acts": "node ./parser/build-acts",
+    "parser-test": "./node_modules/.bin/jest ./parser/__tests__/*.test.js --watch"
   }
 }
