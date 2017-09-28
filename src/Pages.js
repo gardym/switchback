@@ -4,15 +4,12 @@ import { connect } from 'react-redux';
 
 class Pages extends Component {
   render() {
-    let pages = this.props.pages.map((p, idx) => {
-      return <Page key={`${p}_${idx}`} page={p} idx={idx} />
-    });
-    pages = pages[pages.length - 1];
+    let page = (
+      <Page page={this.props.pages[this.props.pages.length - 1]} />
+    );
     return (
-        <div>
-          <div className="pages">
-            {pages}
-          </div>
+        <div className="page-container">
+          {page}
         </div>
     );
   }

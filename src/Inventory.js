@@ -14,13 +14,16 @@ class Inventory extends Component {
                        id={i.id} />
       );
     });
+
     return (
-      <div className="inventory">
-        <div className="inventory-items">
-          {itemElements}
-        </div>
+      <div className="inventory-container">
         <div className="inventory-description">
           <p>{this.props.inventory.description}</p>
+        </div>
+        <div className="inventory">
+          <div className="inventory-items">
+            {itemElements}
+          </div>
         </div>
       </div>
     );

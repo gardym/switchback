@@ -34,7 +34,7 @@ const items = {
   },
   safePoweredCarLamp: {
     id: "safePoweredCarLamp",
-    text: "Rubber-handled, battery-powered, car headlamp",
+    text: "Insulated, powered car headlamp",
     hoverText: "Well insulated. Smells like burning rubber."
   }
 };
