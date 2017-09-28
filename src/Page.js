@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import Line from './Line';
 
 class Page extends Component {
+  componentDidUpdate() {
+    if(this.bottomScrollAnchor) {
+      this.bottomScrollAnchor.scrollIntoView({
+        block: 'end',
+        inline: 'end',
+        behavior: 'smooth'
+      });
+    }
+  }
+
   render() {
     const lineElements = this.props.page.lines.map((l, idx) => {
       let hotspot = l.parts.find(p => p.type === "link-hotspot");
@@ -23,6 +33,7 @@ class Page extends Component {
     return (
       <div className="page">
         {lineElements}
+        <div ref={(el) => { this.bottomScrollAnchor = el; }} />
       </div>
     );
   }
