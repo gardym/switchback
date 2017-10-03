@@ -43,18 +43,18 @@ class Line extends Component {
     if(this.props.drawing) {
       return (
         <div className="line">
-          <p>
+          <div>
             <Typing cursor={false}
                     speed={4}
                     startDelay={40}
                     onFinishedTyping={() => this.props.onFinishedTyping(this.props.pageId, this.props.idx)}>{parts}</Typing>
-          </p>
+          </div>
         </div>
       );
     } else if(this.props.drawn) {
       return (
         <div className="line">
-          <p>{parts}</p>
+          <div>{parts}</div>
           {tip}
         </div>
       );

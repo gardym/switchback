@@ -5,10 +5,11 @@ html, body {
   user-select: none;
 }
 
-p {
+p, .line {
   font-family: 'VT323', monospace;
   font-size: 2rem;
   color: #eee;
+  margin: 2rem 0;
 }
 
 #root {
