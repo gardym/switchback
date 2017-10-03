@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 class Pages extends Component {
   render() {
     let page = (
-      <Page page={this.props.pages[this.props.pages.length - 1]} />
+      <Page page={this.props.pages[this.props.pages.length - 1]}
+            idx={this.props.pages.length - 1} />
     );
     return (
         <div className="page-container">
