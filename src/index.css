@@ -9,6 +9,9 @@ p, .line {
   font-family: 'VT323', monospace;
   font-size: 2rem;
   color: #eee;
+}
+
+.line {
   margin: 2rem 0;
 }
 
@@ -69,7 +72,6 @@ p, .line {
 .inventory p {
   font-size: 1.2rem;
   text-align: center;
-  height: 100%;
 }
 
 .inventory .item {
