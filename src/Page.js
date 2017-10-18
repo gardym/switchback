@@ -16,6 +16,7 @@ class Page extends Component {
     const lineElements = this.props.page.lines.map((l, idx) => {
       let hotspot = l.parts.find(p => p.type === "link-hotspot");
       let tip = hotspot ? hotspot.tip : null;
+
       return (
         <Line pageId={this.props.page.id}
           pageIdx={this.props.idx}

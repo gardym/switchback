@@ -23,7 +23,7 @@ const items = {
   businessCard: {
     id: "businessCard",
     text: "Business Card",
-    hoverText: "Herman Jones. Precinct 1A. 140 Commerce St. Princedale."
+    hoverText: "Herman Jones. Precinct 1A. Princedale."
   },
   rubberSportsHand: {
     id: "rubberSportsHand",

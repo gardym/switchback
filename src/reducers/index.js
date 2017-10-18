@@ -20,23 +20,27 @@ const initialInventoryState = {
  ]
 };
 
-const initialPageState = [
-  mapScriptPageToStatePage(currentAct.pages._init, {
-    inventory: initialInventoryState
-  })
-];
+const storeAppFactory = (initialPageId) => {
+  const initialPageState = [
+    mapScriptPageToStatePage(currentAct.pages[initialPageId], {
+      inventory: initialInventoryState
+    })
+  ];
 
-const initialCombinedState = {
-  pages: initialPageState,
-  interaction: initialInteractionState,
-  inventory: initialInventoryState
+  const initialCombinedState = {
+    pages: initialPageState,
+    interaction: initialInteractionState,
+    inventory: initialInventoryState
+  };
+
+  const storeApp = (state = initialCombinedState, action) => {
+    let nextState = Object.assign({}, interaction(state, action, currentAct, items));
+    nextState = Object.assign({}, inventory(nextState, action, items));
+    nextState = Object.assign({}, pages(nextState, action, currentAct));
+    return nextState;
+  };
+
+  return storeApp;
 };
 
-const storeApp = (state = initialCombinedState, action) => {
-  let nextState = Object.assign({}, interaction(state, action, currentAct, items));
-  nextState = Object.assign({}, inventory(nextState, action, items));
-  nextState = Object.assign({}, pages(nextState, action, currentAct));
-  return nextState;
-}
-
-export default storeApp;
+export default storeAppFactory;
