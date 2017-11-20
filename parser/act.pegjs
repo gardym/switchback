@@ -69,7 +69,7 @@ identifier
   = identifier:[_a-zA-Z0-9]+ { return identifier.join(""); }
 
 text
-  = text:[a-zA-Z0-9,.'?:(|)-]+ { return text.join(""); }
+  = text:[a-zA-Z0-9,.'?:!(|)-]+ { return text.join(""); }
 
 whitespace
   = ws:[ ]* { return ws.join(""); }
