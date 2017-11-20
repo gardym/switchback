@@ -2,8 +2,10 @@ const util = require('util');
 const fs = require('fs');
 const parsedActDecorator = require('./parsedActDecorator');
 
-const act5Text = fs.readFileSync(__dirname + '/act5.act', 'utf8');
+const actsToParse = ['act5'];
 
-const results = parsedActDecorator.parse(act5Text);
-
-fs.writeFileSync(__dirname + '/../src/acts/act5.json', JSON.stringify(results));
+actsToParse.forEach(act => {
+  const act5Text = fs.readFileSync(`${__dirname}/${act}.act`, 'utf8');
+  const results = parsedActDecorator.parse(act5Text);
+  fs.writeFileSync(`${__dirname}/../src/acts/${act}.json`, JSON.stringify(results));
+});
