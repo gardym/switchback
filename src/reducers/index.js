@@ -1,5 +1,5 @@
-import Act5 from '../acts/act5.json';
-import Act5Hotspots from '../acts/act5-hotspots';
+import Act5 from '../acts/act1.json';
+import Act5Hotspots from '../acts/act1-hotspots';
 import items from '../acts/items';
 
 import inventory from './inventory';
@@ -13,10 +13,13 @@ const initialInteractionState = {
   secondItem: null
 };
 
+const act5InitialItems = [
+ items['rubberSportsHand'],
+ items['batteries']
+];
+
 const initialInventoryState = {
  items: [
-   items['rubberSportsHand'],
-   items['batteries']
  ]
 };
 

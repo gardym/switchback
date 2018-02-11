@@ -1,4 +1,14 @@
 const items = {
+  portableRadio: {
+    id: "portableRadio",
+    text: "Portable radio",
+    hoverText: "Sanyo, 1987. Tomato Red."
+  },
+  spareBatteries: {
+    id: "spareBatteries",
+    text: "Spare batteries",
+    hoverText: "'5 Minutes of Power ALL THE TIME'"
+  },
   poweredCarLamp: {
     id: "poweredCarLamp",
     text: "Battery-powered car headlamp",

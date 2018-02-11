@@ -1,0 +1,45 @@
+^_init
+'5 minutes. Hurry up!'
+'It's a full 10 hour drive and if you don't get going now you'll never make it to Grandad's in time!'
+'Astronomy waits for no man, woman, cat or traffic!'
+#hurry:"'Hurry up, kids!'"
+
+^hurry
+Eek, 5 minutes? That's definitely not enough time to pack everything.
+What did Grandad say he needed again?
+?inventory:doesNotContain:portableRadio
+  #radio:"An old radio".
+#clothes:"A well-packed suitcase of essential clothes, toothbrush and a pillow".
+?inventory:contains:portableRadio
+  #hurryMore:"Maybe there's room for one more thing..."
+
+^radio
+Sanyo, 1987. Tomato Red.
+Only *portableRadio:"the best portable radio" ever.
+What #hurry:"else" can you fit in?
+
+^clothes
+A well-packed suitcase of essential clothes, toothbrush and a pillow?
+Naaaah, that's no #hurry:"fun".
+
+^hurryMore
+You scan your shelves for something useful.
+?inventory:doesNotContain:spareBatteries
+  #batteries:"Spare batteries".
+#mixtape:"Your favourite retro-synth-pop mixtape".
+?inventory:contains:spareBatteries
+  Nope, #leaveRoom:"nothing else" that would be useful to anyone.
+
+^batteries
+Four (count 'em) *spareBatteries:"spare D batteries".
+Obviously the size isn't relative to power output because these babies always seem to go dead flat 5 minutes after you stick them in.
+What #hurryMore:"else" can you fit in?
+
+^mixtape
+'X Marks The Revision', 'The Lock Chops', 'Expanded Ballet'.
+All the retro classics are on there.
+Shame Grandad never showed much interest in the pioneers of retro-synth-pop.
+What #hurryMore:"else" can you fit in?
+
+^leaveRoom
+You stuff 
